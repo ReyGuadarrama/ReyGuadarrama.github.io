@@ -2,25 +2,47 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-main {
-    padding: 20px;
-}
-article {
-    margin-bottom: 20px;
-}
-footer {
-    background-color: #f1f1f1;
     color: #333;
+    background: #f4f4f4;
+}
+
+header {
+    background: #222;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 0 10px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+footer {
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    background: #222;
+    color: white;
 }
+
+footer p {
+    margin: 0;
+}
+
