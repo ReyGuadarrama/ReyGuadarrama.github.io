@@ -6,26 +6,33 @@ body {
     background: #f4f4f4;
 }
 
-header {
-    background: #222;
-    color: #fff;
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 10px 20px;
-    text-align: center;
+    background: #4B0082; /* Deep indigo */
+}
+
+.logo {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 10px;
+    margin: 0 10px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
 }
 
 section {
