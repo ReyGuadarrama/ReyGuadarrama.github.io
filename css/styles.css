@@ -1,58 +1,130 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
-    background: #f4f4f4;
 }
 
-.header-container {
+header {
+    background-color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background: #4B0082; /* Deep indigo */
 }
 
-.profile-photo {
-    width: 50px; /* Adjust width as necessary */
-    height: 50px; /* Adjust height as necessary */
-    border-radius: 50%; /* Makes the photo circular */
-    margin-right: 10px; /* Adds some space between the photo and the nav */
+.logo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
+    margin: 0;
     display: flex;
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin-left: 20px;
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    color: #333;
+    font-size: 16px;
 }
 
-section {
-    padding: 20px;
-    margin: 0 10px;
-    background: white;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-
-footer {
+.training-programs {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
     text-align: center;
-    padding: 10px 0;
-    background: #222;
-    color: white;
 }
 
-footer p {
-    margin: 0;
+.training-programs h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.training-programs > p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.program-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: calc(33.333% - 20px);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 20px 0 10px;
+    padding: 0 20px;
+}
+
+.card p {
+    font-size: 1em;
+    color: #666;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
 }
 

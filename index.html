@@ -1,40 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luis Rey's Portfolio</title>
+    <title>Mi Portafolio</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <img src="images/me.png" alt="Rey Guadarrama" class="profile-photo"> <!-- Update with your logo -->
+        <div class="container">
+            <div class="logo">
+                <img src="images/me.png" alt="Rey Guadarrama">
+                <span class="logo-text">Rey Guadarrama</span>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#Blog">Blog</a></li>
-                    <li><a href="#About">About</a></li>
-                    <!-- Add other links as needed -->
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="html/about.html">ABOUT</a></li>
+                    <li><a href="html/portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="html/blog.html">BLOG</a></li>
                 </ul>
             </nav>
         </div>
-    </header>    
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <!-- Insert project details here -->
-    </section>
-
-    <section id="resume">
-        <h2>Resume</h2>
-        <!-- Insert resume details here -->
-    </section>
-
-    <footer>
-        <p>© 2024 Luis Rey. All rights reserved.</p>
-    </footer>
-
-    <script src="js/script.js"></script>
+    </header>
+    <main>
+        <section class="training-programs">
+            <h1>Recent Blogs</h1>
+            <p>Some of my latest blogs</p>
+            
+            <div class="program-cards">
+                <div class="card">
+                    <img src="images/Dense_NN.png" alt="Optimizers">
+                    <h2>Gradient Descent Optimizers</h2>
+                    <p>A Review of the most common used gradient descent optimizers</p>
+                    <a href="posts/Optimizers.html" class="read-more">Read more →</a>
+                </div>
+                
+                <div class="card">
+                    <img src="images/Quantum-generator.png" alt="QGANS">
+                    <h2>Quantum Generative Adversarial Networks</h2>
+                    <p>An introduction to Quantum Generative Adversarial Networks and its applications</p>
+                    <a href="posts/QGANs.html" class="read-more">Read more →</a>
+                </div>
+                
+                <div class="card">
+                    <img src="images/GSoC-logo.png" alt="Virtual program">
+                    <h2>GSoC 2024 | QGANs for Monte Carlo Simulations</h2>
+                    <p>A summary of my results and experience in the Google Summer of Code 2024 program</p>
+                    <a href="posts/GSoC-2024.html" class="read-more">Read more →</a>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
 
