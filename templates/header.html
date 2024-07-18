@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        header {
+            position: fixed;
+            font-family: Arial, sans-serif;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: #f9fafc;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .header-navbar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .header-navbar ul li {
+            margin-left: 20px;
+        }
+
+        .header-navbar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 2px 0;
+            transition: 0.4s;
+        }
+
+        /* Responsive Desing */
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+            } 
+
+            .logo {
+                margin-bottom: 10px;
+            }
+
+            .header-navbar {
+                width: 100%;
+            }
+ 
+            .header-navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .header-navbar ul.show {
+                display: flex;
+            }
+
+            .header-navbar ul li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+                align-self: flex-end;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/me.png" alt="Rey Guadarrama">
+                <span class="logo-text">Rey Guadarrama</span>
+            </div>
+            
+            <nav class="header-navbar">
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="html/about.html">ABOUT</a></li>
+                    <li><a href="html/portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="html/blog.html">BLOG</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navUl = document.querySelector('nav ul');
+
+            menuToggle.addEventListener('click', function() {
+                navUl.classList.toggle('show');
+                menuToggle.classList.toggle('active');
+            });
+        });
+    </script>
+    
+</body>
+</html>
