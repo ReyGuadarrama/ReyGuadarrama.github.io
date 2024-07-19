@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GSoC 2024 - Rey Guadarrama</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/blogpost.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/mono-blue.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
-    <script src="../js/main.js"></script>
 </head>
 <body>
-    
+
     <div class="menu-container">
 
         <div class="blue-bar"></div>
@@ -27,15 +26,16 @@
 
         <span><a href="#Simulating-random-variables" class="menu-item">Simulating random variables with QGANs</a></span>
 
+        <span><a href="#ref-sec" class="menu-item">References</a></span>
     </div>
 
     <header>
         <div class="container">
             <div class="logo-blog">
-                <img src="../images/Rey-logo.png" alt="Rey Guadarrama">
-                <span class="logo-text">Rey Guadarrama</span>
+                <img src="../images/logos_portraits/Rey-logo.png" alt="Rey Guadarrama">
+                <span class="logo-blog-text">Rey Guadarrama</span>
             </div>
-            <nav>
+            <nav class="header-navbar">
                 <div class="menu-toggle">
                     <span></span>
                     <span></span>
@@ -56,7 +56,7 @@
             <div class="post-header">
                 <h1 class="post-title">GSoC 2024 | QGANs for Monte Carlo Simulations</h1>
                 <div class="post-meta">
-                    <img src="../images/me.png" alt="Avatar del autor" class="author-avatar">
+                    <img src="../images/logos_portraits/me.png" alt="Avatar del autor" class="author-avatar">
                     <div>
                         <span class="author-name">Luis Rey Vargaz Guadarrama</span>
                         <br>
@@ -66,7 +66,7 @@
             </div>
             <div class="post-content">
                 <section id="GSoC" class="anchor-target">
-                    <h1>What is Google Summer of Code?</h1>
+                    <h2>What is Google Summer of Code?</h2>
                     <p>
                         I spent the last summer working in GSoC 2024 with ML4SC organization. Google Summer 
                         of Code is an international, online program designed to introduce 
@@ -82,7 +82,7 @@
                 </section>  
                 
                 <section id="Monte-Carlo" class="anchor-target">
-                    <h1>Monte Carlo Simulations</h1>
+                    <h2>Monte Carlo Simulations</h2>
                     <p>
                         Monte Carlo Simulation is a computational technique that uses repeated random sampling to 
                         estimate the probability of various outcomes in uncertain scenarios. Developed by John von 
@@ -106,7 +106,7 @@
 
                     <p>
                         Generative Adversarial Networks (GANs) are a framework for estimating generative models using an 
-                        adversarial process <a href="#ref1" class="citation"> [1]</a>. This involves training two models simultaneously:
+                        adversarial process <a href="#ref1" class="citation" id="cite">[1]</a>. This involves training two models simultaneously:
                         a generative model \(G\) that captures the data distribution and a discriminative model \(D\) that distinguishes 
                         between samples from the true data distribution and those produced by \(G\). The goal is to improve  so that 
                         \(D\) cannot distinguish between real and generated data. This is similar to a minimax two-player game, where \(G\) 
@@ -124,7 +124,7 @@
                     </p>
 
                     <figure>
-                        <img src="../images/GAN_diagram.png" alt="GAN-diagram" style="max-width: 100%; height: auto;">
+                        <img src="../images/GSoC-2024/GAN_diagram.png" alt="GAN-diagram" style="max-width: 100%; height: auto;">
                         <figcaption>Diagram of a GAN.</figcaption>
                     </figure>
                 </section>
@@ -134,8 +134,8 @@
 
                     <p>
                         Quantum Generative Adversarial Networks (QGANs) represent a quantum extension of classical GANs, incorporating 
-                        quantum mechanics to leverate the computational advanteges of quantum systems <a href="#ref2" class="citation">[2]</a>
-                        <a href="#ref2" class="citation">[3]</a>. In QGANs the generator is a parametrized quantum circuit which produces 
+                        quantum mechanics to leverate the computational advanteges of quantum systems <a href="#ref2" class="citation" id="cite">[2]</a>
+                        <a href="#ref2" class="citation" id="cite">[3]</a>. In QGANs the generator is a parametrized quantum circuit which produces 
                         quantum states that resembles the distribution from the training data, while the discriminator can 
                         be either a classical discriminator or a quantum parametrized circuit which differentiate between 
                         the real and generated distribution.
@@ -143,7 +143,7 @@
                     </p>
 
                     <figure>
-                        <img src="../images/QGAN_diagram.png" alt="QGAN-diagram" style="max-width: 100%; height: auto;">
+                        <img src="../images/GSoC-2024/QGAN_diagram.png" alt="QGAN-diagram" style="max-width: 100%; height: auto;">
                         <figcaption>Diagram of a QGAN composed by a quantum generator and a classical discriminator.</figcaption>
                     </figure>
                 </section>
@@ -155,7 +155,7 @@
                         One of the key steps for Monte Carlo Method is specify the probability distribution of independent variables,
                         an incorrect choice of the distribution can lead to inaccuracies. In my project I try to address this difficulty 
                         by implementing QGANs for Monte Carlo Simulations. I used the architecture proposed by Zoufal et. al.
-                        <a href="#ref3" class="citation">[4]</a> composed by a quantum generator with an equal superposition as reference 
+                        <a href="#ref3" class="citation" id="cite">[4]</a> composed by a quantum generator with an equal superposition as reference 
                         state followed by layers of parametrized \(\text{Pauli-Y}\) rotations followed by an entangling block of 
                         \(\text{control-Z}\) gates and a classical discriminator consisting in a dense neural network.
                     </p>
@@ -163,15 +163,15 @@
                     <figure style="position: relative;">
                         <div style="display: flex; justify-content: space-between; position: relative;">
                             <div style="position: relative; display: inline-block;">
-                                <img src="../images/single_layer.png" alt="QGAN-diagram1" style="max-width: 85%; height: auto;">
-                                <span style="position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); padding: 2px;"><em>a)</em></span>
+                                <img src="../images/GSoC-2024/single_layer.png" alt="QGAN-diagram1" style="max-width: 85%; height: auto;">
+                                <span style="position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); padding: 2px;"><i>a)</i></span>
                             </div>
                             <div style="position: relative; display: inline-block;">
-                                <img src="../images/Quantum-generator.png" alt="QGAN-diagram2" style="max-width: 85%; height: auto;">
+                                <img src="../images/GSoC-2024/Quantum-generator.png" alt="QGAN-diagram2" style="max-width: 85%; height: auto;">
                                 <span style="position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); padding: 2px;"><em>b)</em></span>
                             </div>
                         </div>
-                        <figcaption><em>a)</em> Shows a single layer of the parametrized circuit. <em>b)</em> shows the parametrized circuit 
+                        <figcaption><i>a)</i> Shows a single layer of the parametrized circuit. <i>b)</i> shows the parametrized circuit 
                             corresponding to the quantum generator.</figcaption>
                     </figure>
                     
@@ -254,19 +254,19 @@
 
                     <figure>
                         <div style="position: relative; margin-bottom: 20px;">
-                            <img src="../images/coin_toss_result.png" alt="coin-toss" style="width: 100%; height: auto;">
+                            <img src="../images/GSoC-2024/coin_toss_result.png" alt="coin-toss" style="width: 100%; height: auto;">
                             <span style="position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); padding: 2px;"><em>a)</em></span>
                         </div>
                         <div style="position: relative;">
-                            <img src="../images/rolling_dice.png" alt="rolling-dice" style="width: 100%; height: auto;">
+                            <img src="../images/GSoC-2024/rolling_dice.png" alt="rolling-dice" style="width: 100%; height: auto;">
                             <span style="position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); padding: 2px;"><em>b)</em></span>
                         </div>
                         <div style="position: relative;">
-                            <img src="../images/particle_decay.png" alt="particle-decay" style="width: 100%; height: auto;">
+                            <img src="../images/GSoC-2024/particle_decay.png" alt="particle-decay" style="width: 100%; height: auto;">
                             <span style="position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); padding: 2px;"><em>c)</em></span>
                         </div>
                         <div style="position: relative;">
-                            <img src="../images/random_walk.png" alt="random-walk" style="width: 100%; height: auto;">
+                            <img src="../images/GSoC-2024/random_walk.png" alt="random-walk" style="width: 100%; height: auto;">
                             <span style="position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); padding: 2px;"><em>d)</em></span>
                         </div>
                         <figcaption>Diagramas de un QGAN compuesto por un generador cuántico y un discriminador clásico.</figcaption>
@@ -284,23 +284,24 @@
 print(factorial(5))  # Salida: 120</code></pre>
                 </div>
                 
-
-                <h2>References</h2>
+                <section id="ref-sec" class="anchor-target">
+                    <h2>References</h2>
                     <div id="references">
                         <p id="ref1">[1] Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, 
                             Sherjil Ozair, Aaron Courville and Yoshua Bengio, <strong>Generative Adversarial Networks</strong>,
-                            <a href="https://arxiv.org/abs/1406.2661" target="_blank">arXiv:1406.2661v1 </a>.</p>
+                            <a href="https://arxiv.org/abs/1406.2661" id="cite" target="_blank">arXiv:1406.2661v1 </a>.</p>
 
                         <p id="ref2">[2] Pierre-Luc Dallaire-Demers, <strong>Quantum Generative Adversarial Networks</strong>,
-                        <a href="https://arxiv.org/abs/1804.08641" target="_blank">arXiv:1804.08641v2 </a>.</p>
+                        <a href="https://arxiv.org/abs/1804.08641" id="cite" target="_blank">arXiv:1804.08641v2 </a>.</p>
 
                         <p id="ref3">[3] Seth Lloyd, Christian Weedbrook, <strong>Quantum Generative Adversarial Learning</strong>,
-                        <a href="https://arxiv.org/abs/1804.09139" target="_blank">arXiv:1804.09139v1 </a>.</p>
+                        <a href="https://arxiv.org/abs/1804.09139" id="cite" target="_blank">arXiv:1804.09139v1 </a>.</p>
 
                         <p id="ref4">[4] Zoufal, C., Lucchi, A., & Woerner, S. (2019). <strong>Quantum Generative Adversarial Networks for 
                             learning and loading random distributions</strong>. Npj Quantum Information, 5(1).
-                            <a href="https://www.nature.com/articles/s41534-019-0223-2" target="_blank">https://doi.org/10.1038/s41534-019-0223-2 </a>.</p>
+                            <a href="https://www.nature.com/articles/s41534-019-0223-2" id="cite" target="_blank">https://doi.org/10.1038/s41534-019-0223-2 </a>.</p>
                     </div>
+                </section>
 
             </div>
         </article>
@@ -315,5 +316,6 @@ print(factorial(5))  # Salida: 120</code></pre>
         <p class="copyright">&copy; All rights reserved.</p>
     </footer>
     
+    <script src="../js/blogpost.js"></script>
 </body>
 </html>
