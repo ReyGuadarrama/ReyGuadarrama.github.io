@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Rey Guadarrama</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
                 <img src="images/me.png" alt="Rey Guadarrama">
                 <span class="logo-text">Rey Guadarrama</span>
             </div>
-            <nav>
+            <nav class="header-navbar">
                 <div class="menu-toggle">
                     <span></span>
                     <span></span>
@@ -29,28 +29,29 @@
             </nav>
         </div>
     </header>
+    
     <main>
-        <section class="training-programs">
+        <section class="recent-blogpost">
             <h1>Recent Blogs</h1>
             <p>Some of my latest blogs</p>
             
-            <div class="program-cards">
+            <div class="blogpost-cards">
                 <div class="card">
-                    <img src="images/Dense_NN.png" alt="Optimizers">
+                    <img class="card-cover" src="../images/Dense_NN.png" alt="Optimizers">
                     <h2>Gradient Descent Optimizers</h2>
                     <p>A Review of the most common used gradient descent optimizers</p>
                     <a href="posts/Optimizers.html" class="read-more">Read more →</a>
                 </div>
                 
                 <div class="card">
-                    <img src="images/Quantum-generator.png" alt="QGANS">
+                    <img class="card-cover" src="../images/Quantum-generator.png" alt="QGANS">
                     <h2>Quantum Generative Adversarial Networks</h2>
                     <p>An introduction to Quantum Generative Adversarial Networks and its applications</p>
                     <a href="posts/QGANs.html" class="read-more">Read more →</a>
                 </div>
                 
                 <div class="card">
-                    <img src="images/GSoC-logo.png" alt="GSoC-2024">
+                    <img class="card-cover" src="../images/GSoC-logo.png" alt="GSoC-2024">
                     <h2>GSoC 2024 | QGANs for Monte Carlo Simulations</h2>
                     <p>A summary of my results and experience in the Google Summer of Code 2024 program</p>
                     <a href="posts/GSoC-2024.html" class="read-more">Read more →</a>
@@ -58,6 +59,7 @@
             </div>
         </section>
     </main>
+
     <footer>
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/reyguadarrama/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -66,6 +68,7 @@
         </div>
         <p class="copyright">&copy; All rights reserved.</p>
     </footer>
+
     <script src="js/main.js"></script>
 </body>
 </html>
