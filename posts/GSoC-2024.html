@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GSoC 2024 - Rey Guadarrama</title>
     <link rel="stylesheet" href="../css/blogpost.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/mono-blue.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -26,7 +26,12 @@
 
         <span><a href="#Simulating-random-variables" class="menu-item">Simulating random variables with QGANs</a></span>
 
+        <span><a href="#gluon-jets" class="menu-item">Using a QGAN to generate gluon initiated jets</a></span>
+
+        <span><a href="#conclusions" class="menu-item">Future work and conclusion</a></span>
+
         <span><a href="#ref-sec" class="menu-item">References</a></span>
+
     </div>
 
     <header>
@@ -68,14 +73,15 @@
                 <section id="GSoC" class="anchor-target">
                     <h2>What is Google Summer of Code?</h2>
                     <p>
-                        I spent the last summer working in GSoC 2024 with ML4SC organization. Google Summer 
+                        I spent the last summer working in GSoC 2024 with <a href="https://ml4sci.org/" id="cite">ML4SC</a> organization. Google Summer 
                         of Code is an international, online program designed to introduce 
                         new contributors to open source software development. During this program, GSoC 
                         participants collaborate with an open source organization on a programming project 
                         lasting 12 weeks or more, under the supervision of mentors. My experience in GSoC was 
-                        one of the most enriching and challenging in my life. My project is QGANs for Monte
-                        Carlo Simulations and aims to explore the feasibility of applying Quantum Generative 
-                        Adversarial Networks to generate event which can be simulated through Monte Carlo Method.</p>
+                        one of the most enriching and challenging in my life. My project, QGANs for Monte
+                        Carlo Simulations aims to explore the feasibility of applying Quantum Generative 
+                        Adversarial Networks to generate event which can be simulated through Monte Carlo Method. The code of this project is available
+                        in <a href="https://github.com/ML4SCI/QMLHEP/tree/main" id="cite">github</a></p>.
                     <p>
                         
                     </p>
@@ -113,7 +119,7 @@
                         tries to fool \(D\) and \(D\) aims to detect the fake data. \(D\) is trainned to maximize the probability of
                         assigning the correct label to both the true data samples and the generated samples from \(G\). Simultaneously
                         \(G\) is trainned to minimize the probabilitiy of \(D\) correctly distinguish between true an generated samples. 
-                        This is done by optimizing the loss function
+                        This is done by optimizing the loss function:
                         
                         \[V(D, G) = \mathbb{E}_{\mathbf{x} \sim p_{\text{data}}(\mathbf{x})} [\log D(\mathbf{x})] + 
                         \mathbb{E}_{\mathbf{z} \sim p_{\mathbf{z}}(\mathbf{z})} [\log (1 - D(G(\mathbf{z})))] \]
@@ -125,7 +131,7 @@
 
                     <figure>
                         <img src="../images/GSoC-2024/GAN_diagram.png" alt="GAN-diagram" style="max-width: 100%; height: auto;">
-                        <figcaption>Diagram of a GAN.</figcaption>
+                        <figcaption>Diagram of a classical GAN.</figcaption>
                     </figure>
                 </section>
 
@@ -248,7 +254,26 @@
 
                     <p>
                         I chose four simple scenarios to simulate: Rolling of two six-sided dice, coin toss sequences, particle time decay
-                        and two dimensional random walk.
+                        and two dimensional random walk. In this implementation, the quantum circuit returns the probability of measure the 
+                        elements in the basis state, and each element represent a possible outcome from the simulations, once trained, the generator
+                        is used to produce samples simulating an single event, the training process was the following:
+                        <ul>
+                            <li><b>Data Generation</b></li> 
+                                The training dataset was generated classically, composed by 1000000 samples for each scenario
+                                and splitted into 1000 batches.
+                            
+                            <li><b>Calculate Probabilities</b></li>
+                                The pseudo-probabilities of each batch was calculated, these was used to
+                                training the quantum generator, which returns the probabilities of each element in the basis state
+
+                            <li><b>Generator and discriminador</b></li>
+                                Two neural network models are defined. The discriminator is a classical 
+                                neural network that tries to distinguish between real and fake data samples, while the generator is a quantum 
+                                circuit designed to produce data samples that resembles the real data distribution.
+
+                        </ul>
+
+                        
                     </p>
 
 
@@ -269,37 +294,159 @@
                             <img src="../images/GSoC-2024/random_walk.png" alt="random-walk" style="width: 100%; height: auto;">
                             <span style="position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); padding: 2px;"><em>d)</em></span>
                         </div>
-                        <figcaption>Diagramas de un QGAN compuesto por un generador cuántico y un discriminador clásico.</figcaption>
+                        <figcaption><em>a)</em> Results from a 10 coin toss simulation. <em>b)</em> Results from a rolling two dice simulation.
+                            <em>c)</em> Results from a particle decay time simulation. <em>d)</em> Results from a 2D random walk simulation .</figcaption>
                     </figure>
                 </section>
 
 
-                <div class="code-block">
-                    <pre><code class="language-python">def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
+                <section id="gluon-jets" class="anchor-target">
+                    <h2>Using a QGAN to generate gluon initiated jets</h2>
 
-print(factorial(5))  # Salida: 120</code></pre>
-                </div>
+                    <p>
+                        Moving to a more complex data distribution, the dataset of detector images from Quark initiated jets <a href="#ref5" class="citation" id="cite">[5]</a> 
+                        was used, specifically I used the electromagnetic calorimeter images which measures energy deposits from electromagnetic particles.
+                    </p>
+
+                    <figure>
+                        <img src="../images/GSoC-2024/real_jets_ECAL.png" alt="QGAN-diagram" style="max-width: 100%; height: auto;">
+                        <figcaption>Electromagnetic calorimeter subdetector jet-view images of individual jets <a href="#ref5" class="citation" id="cite">[5]</a>.</figcaption>
+                    </figure>
+
+                    <p>
+                        Due to the high complexity of the dataset, the first architecture was not enough powerful to resemble the training dataset distribution,
+                        that is why I implemented the architecture proposed by He Liang et. al.<a href="#ref6" class="citation" id="cite">[6]</a>, which uses an auxiliary register to provide 
+                        the PQC more possible solution states along with a post-processing step which allows the output of the quantum generator to get 
+                        rid of the normalization constraint of the measurement. This architecture also uses many generators to generate a fraction of the image each, 
+                        with this, each generator can focus on a simpler distribution rather than the more complex complete image.
+
+                    </p>
+
+                    <figure>
+                        <img src="../images/GSoC-2024/PQC2png.png" alt="PQC-2" style="max-width: 100%; height: auto;">
+                        <figcaption>Parametrized quantum circuit from the architecture proposed by He Liang. <a href="#ref6" class="citation" id="cite">[6]</a></figcaption>
+                    </figure>
+
+                    <p>
+                        Quantum gates are unitary operators and by definition, are linear transformations. For the most simple generative task as the
+                        examples from the section above these transformation are enough, however for more complex data distribution non-linear transformation 
+                        could be needed. for the pre-measurement state of the generator we have
+
+                        \[ |\Psi(z)\rangle = U_G(\theta)|z\rangle\]
+
+                        Where \(U_G(\theta)\) represents the overall unitary operator of the parametrized layers. If we take a partial measurement \(\Pi\)
+                        and trace out the ancillary subsystem
+
+                        \[\rho(z) = \frac{\operatorname{Tr}_A (\Pi \otimes |\Psi(z)\rangle \langle \Psi(z)|)}{\operatorname{Tr} (\Pi \otimes |\Psi(z)\rangle
+                        \langle \Psi(z)|)} = \frac{\operatorname{Tr}_A (\Pi \otimes |\Psi(z)\rangle \langle \Psi(z)|)}{\langle \Psi(z) | \Pi \otimes 
+                        |\Psi(z)\rangle} \]
+
+                        The post measurement state \(p(z)\), is dependent on \(z\) on the numerator and denominator. This implies a non-linear transformation 
+                        was done. 
+
+                    </p>
+
+                    <p>
+                        On the other hand I wanted the output of the quantum generator to represent energy deposits, then the output should
+                        be able to take values bigger than 1 and the sum of the elements from the output do not necesarily need to sum up to 1. These two 
+                        limitations can be solved by applying the following transformation to the output of the circuit.
+
+                        \[ \tilde{x} = \frac{g}{y}\]
+
+                        Where \(g\) is the output from the generator and \(y \in (0, 1]\). In this work, I used, \(y=0.3\). The training process was the 
+                        following:
+
+                        <ul>
+                            <li><b>Data Preprocessing</b></li> 
+                                From the ECAL channel, 512 images were down-scaled from \(125 \times 125\) to \(8 \times 8\) images using a sumpool 
+                                transformation 
+                                 
+                            <li><b>Generator and discriminador</b></li>
+                                The model was trained duting 30 epoch using Stochastic Gradient Descent optimizer, the classical discriminator consisting
+                                in 2 hidden layers of 128 and 32 nodes respectively, both using LeakyRelu activation function, and an output layer with a 
+                                single node and sigmoid activation function. On the other hand each of the two generators was conformed by 7 feature qubits and 2 auxiliary
+                                qubits.
+                        </ul>
+                    </p>
+
+                    <figure>
+                        <div style="position: relative; margin-bottom: 20px;">
+                            <img src="../images/GSoC-2024/ECAL_overlay.png" alt="ECAL_overlay" style="max-width: 100%; height: auto;">
+                            <span style="position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); padding: 2px;"><em>a)</em></span>
+                        </div>
+                        <div style="position: relative;">
+                            <img src="../images/GSoC-2024/training_ECAL.png" alt="ECAL_training" style="max-width: 100%; height: auto;">
+                            <span style="position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); padding: 2px;"><em>b)</em></span>
+                        </div>
+                        <figcaption>Results from the QGAN training. <em>a)</em> In the left the overlay of the training data set is shown and in the right the overlay 
+                            of the generated jets is shown. <em>b)</em> The training history is shown.
+                        </figcaption>
+                    </figure>
+
+                     
+
+                    <figure style="position: relative;">
+                        <div style="display: flex; justify-content: space-between; position: relative;">
+                            <div style="position: relative; display: inline-block;">
+                                <img src="../images/GSoC-2024/Total_energy_deposits.png" alt="Total-deposits" style="max-width: 85%; height: auto;">
+                                <span style="position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); padding: 2px;"><i>a)</i></span>
+                            </div>
+                            <div style="position: relative; display: inline-block;">
+                                <img src="../images/GSoC-2024/Particle_energy_deposits.png" alt="particle-deposits" style="max-width: 85%; height: auto;">
+                                <span style="position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); padding: 2px;"><em>b)</em></span>
+                            </div>
+                        </div>
+                        <figcaption><i>a)</i> Shows the histogram of the total energy deposits per jet of the real and generated jets. 
+                            <i>b)</i> shows the histogram of the individual particle energy deposits of the real and generated jets.</figcaption>
+                    </figure>
+
+                </section>
+
+
+                <section id="conclusions" class="anchor-target">
+                    <h2>Future work and conclusion</h2>
+                    <p>
+                        We can observe from results of the simple simulations and the gluon initiated jets images generation, that the implementation
+                        of QGANs in the generation of data with simple and complex distributions is feasible. It would be interesting to explore how 
+                        good this implementation is generating different data distributions correlated to each other, for example the three subdetector
+                        channels from the detector images <a href="#ref5" class="citation" id="cite">[5]</a>. The most interesting part of this project was
+                        delve into a promissing method for alternative future high-energy physics simulations. 
+
+                    </p>
+
                 
-                <section id="ref-sec" class="anchor-target">
+                </section>
+
+
+
+
+
+
+
                     <h2>References</h2>
                     <div id="references">
                         <p id="ref1">[1] Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, 
                             Sherjil Ozair, Aaron Courville and Yoshua Bengio, <strong>Generative Adversarial Networks</strong>,
-                            <a href="https://arxiv.org/abs/1406.2661" id="cite" target="_blank">arXiv:1406.2661v1 </a>.</p>
+                            <a href="https://arxiv.org/abs/1406.2661" id="cite" target="_blank">arXiv:1406.2661v1. </a></p>
 
                         <p id="ref2">[2] Pierre-Luc Dallaire-Demers, <strong>Quantum Generative Adversarial Networks</strong>,
-                        <a href="https://arxiv.org/abs/1804.08641" id="cite" target="_blank">arXiv:1804.08641v2 </a>.</p>
+                        <a href="https://arxiv.org/abs/1804.08641" id="cite" target="_blank">arXiv:1804.08641v2.</a></p>
 
                         <p id="ref3">[3] Seth Lloyd, Christian Weedbrook, <strong>Quantum Generative Adversarial Learning</strong>,
-                        <a href="https://arxiv.org/abs/1804.09139" id="cite" target="_blank">arXiv:1804.09139v1 </a>.</p>
+                        <a href="https://arxiv.org/abs/1804.09139" id="cite" target="_blank">arXiv:1804.09139v1.</a></p>
 
                         <p id="ref4">[4] Zoufal, C., Lucchi, A., & Woerner, S. (2019). <strong>Quantum Generative Adversarial Networks for 
                             learning and loading random distributions</strong>. Npj Quantum Information, 5(1).
-                            <a href="https://www.nature.com/articles/s41534-019-0223-2" id="cite" target="_blank">https://doi.org/10.1038/s41534-019-0223-2 </a>.</p>
+                            <a href="https://www.nature.com/articles/s41534-019-0223-2" id="cite" target="_blank">https://doi.org/10.1038/s41534-019-0223-2. </a></p>
+
+                        <p id="ref5">[5] Andrews, M., Alison, J., An, S., Bryant, P., Burkle, B., Gleyzer, S., Narain, M., Paulini, M., Poczos, B. & Usai, E. (2019).
+                            <strong>End-to-End Jet Classification of Quarks and Gluons with the CMS Open Data.</strong> Nucl. Instrum. Methods Phys. Res. A 977, 164304 (2020).
+                            <a href="https://www.sciencedirect.com/science/article/pii/S0168900220307002?via%3Dihub" id="cite" target="_blank">https://doi.org/10.1016/j.nima.2020.164304. </a></p>
+                        
+                        <p id="ref6">[6] He-Liang, Yuxuan Du, Ming Gong, Youwei Zhao, Yulin Wu, Chaoyue Wang, Shaowei Li, Futian Liang, et. al. 
+                            <strong>Quantum Generative Adversarial Networks for Image Generation</strong>,
+                            <a href="https://arxiv.org/abs/2010.06201" id="cite" target="_blank">arXiv:2010.06201v3.</a>      
+                        </p>
                     </div>
                 </section>
 
