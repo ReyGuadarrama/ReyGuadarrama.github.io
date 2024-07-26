@@ -73,15 +73,16 @@
                 <section id="GSoC" class="anchor-target">
                     <h2>What is Google Summer of Code?</h2>
                     <p>
-                        I spent the last summer working in GSoC 2024 with <a href="https://ml4sci.org/" id="cite">ML4SC</a> organization. Google Summer 
-                        of Code is an international, online program designed to introduce 
-                        new contributors to open source software development. During this program, GSoC 
-                        participants collaborate with an open source organization on a programming project 
-                        lasting 12 weeks or more, under the supervision of mentors. My experience in GSoC was 
-                        one of the most enriching and challenging in my life. My project, QGANs for Monte
-                        Carlo Simulations aims to explore the feasibility of applying Quantum Generative 
-                        Adversarial Networks to generate event which can be simulated through Monte Carlo Method. The code of this project is available
-                        in <a href="https://github.com/ML4SCI/QMLHEP/tree/main" id="cite">github</a></p>.
+                        I spent the last summer working in <a href="https://summerofcode.withgoogle.com/" id="cite">GSoC</a> 2024 with the
+                        <a href="https://ml4sci.org/" id="cite">ML4SCI</a> organization. Google Summer of Code is an international online 
+                        program designed to introduce new contributors to open-source software development. During this program, GSoC 
+                        participants collaborate with an open-source organization on a programming project lasting 12 weeks or more under 
+                        the supervision of mentors. 
+                        Participating in GSoC was one of the most enriching and challenging experiences of my life. My project, 
+                        <a href="https://summerofcode.withgoogle.com/programs/2024/projects/HnazN3SK" id="cite">QGANs for Monte
+                        Carlo Simulations</a> aaims to investigate the feasibility of using Quantum Generative Adversarial Networks 
+                        to generate events for Monte Carlo simulations. The code of this project is available in 
+                        <a href="https://github.com/ML4SCI/QMLHEP/tree/main" id="cite">Git Hub</a>.</p>
                     <p>
                         
                     </p>
@@ -111,12 +112,12 @@
                     <h2>Generative Adversarial Networks</h2>
 
                     <p>
-                        Generative Adversarial Networks (GANs) are a framework for estimating generative models using an 
-                        adversarial process <a href="#ref1" class="citation" id="cite">[1]</a>. This involves training two models simultaneously:
-                        a generative model \(G\) that captures the data distribution and a discriminative model \(D\) that distinguishes 
-                        between samples from the true data distribution and those produced by \(G\). The goal is to improve  so that 
-                        \(D\) cannot distinguish between real and generated data. This is similar to a minimax two-player game, where \(G\) 
-                        tries to fool \(D\) and \(D\) aims to detect the fake data. \(D\) is trainned to maximize the probability of
+                        Generative Adversarial Networks (GANs) is a framework for estimating generative models using an adversarial process
+                        <a href="#ref1" class="citation" id="cite">[1]</a>. This framework involves training two models simultaneously:
+                        a generative model \(G\) that captures the data distribution and a discriminative model \(D\) that distinguishes between 
+                        samples from the training data distribution and those produced by \(G\). The goal is to improve \(G\) so that \(D\) cannot 
+                        diferentiate between training data and generated data. This process is similar to a minimax two-player game, 
+                        where \(G\) tries to fool \(D\) while \(D\) aims to detect the fake data. \(D\) is trainned to maximize the probability of
                         assigning the correct label to both the true data samples and the generated samples from \(G\). Simultaneously
                         \(G\) is trainned to minimize the probabilitiy of \(D\) correctly distinguish between true an generated samples. 
                         This is done by optimizing the loss function:
@@ -139,12 +140,11 @@
                     <h2>Quantum Generative Adversarial Networks</h2>
 
                     <p>
-                        Quantum Generative Adversarial Networks (QGANs) represent a quantum extension of classical GANs, incorporating 
-                        quantum mechanics to leverate the computational advanteges of quantum systems <a href="#ref2" class="citation" id="cite">[2]</a>
-                        <a href="#ref2" class="citation" id="cite">[3]</a>. In QGANs the generator is a parametrized quantum circuit which produces 
-                        quantum states that resembles the distribution from the training data, while the discriminator can 
-                        be either a classical discriminator or a quantum parametrized circuit which differentiate between 
-                        the real and generated distribution.
+                        Quantum Generative Adversarial Networks (QGANs) represent a quantum extension of classical GANs, incorporating quantum 
+                        mechanics to leverage the computational advantages of quantum systems <a href="#ref2" class="citation" id="cite">[2]</a>
+                        <a href="#ref2" class="citation" id="cite">[3]</a>. In QGANs, the generator is a parametrized quantum circuit that produces 
+                        quantum states that resemble the distribution from the training data, meanwhile, the discriminator can be either a classical 
+                        discriminator or a quantum parametrized circuit that differentiates between the training data distribution and generated distribution.
 
                     </p>
 
@@ -158,12 +158,12 @@
                     <h2>Simulating random variables with QGANs</h2>
 
                     <p>
-                        One of the key steps for Monte Carlo Method is specify the probability distribution of independent variables,
-                        an incorrect choice of the distribution can lead to inaccuracies. In my project I try to address this difficulty 
-                        by implementing QGANs for Monte Carlo Simulations. I used the architecture proposed by Zoufal et. al.
-                        <a href="#ref3" class="citation" id="cite">[4]</a> composed by a quantum generator with an equal superposition as reference 
-                        state followed by layers of parametrized \(\text{Pauli-Y}\) rotations followed by an entangling block of 
-                        \(\text{control-Z}\) gates and a classical discriminator consisting in a dense neural network.
+                        One of the key steps for the Monte Carlo Method is to specify the probability distribution of independent variables. 
+                        An incorrect choice of the distribution can lead to inaccuracies. In my project, I try to address this difficulty by 
+                        implementing QGANs for Monte Carlo Simulations. I used the architecture proposed by Zoufal et. al.
+                        <a href="#ref3" class="citation" id="cite">[4]</a> composed of a quantum generator with an equal superposition as a 
+                        reference state followed by layers of parametrized \(\text{Pauli-Y}\) rotations followed by an entangling block of 
+                        \(\text{control-Z}\) gates and a classical discriminator consisting of dense neural network.
                     </p>
                     
                     <figure style="position: relative;">
@@ -182,84 +182,85 @@
                     </figure>
                     
                     <p>
-                        The implementation was done using pennylane and pytorch. The generator circuit 
-                        returns the probabilities of the basis states, each state representing a posible outcome. The circuit takes a weights
-                        parameter and as the name indicates, this is an array with the angle of rotation of each parametrized \(\text{Pauli-Y}\)
-                        rotation. 
+                        The project implementation uses PennyLane and PyTorch. The generator circuit returns the probabilities of 
+                        the basis states, each state representing a possible outcome. The circuit takes a weights parameter, as 
+                        the name indicates, this parameter is an array with the angle of rotation of each parametrized \(\text{Pauli-Y}\) rotation. 
                     </p>
 
                     <div class="code-block">
                         <pre><code class="language-python">dev = qml.device("default.qubit", wires=n_qubits)
 
-    @qml.qnode(dev, diff_method="backprop")
-    def quantum_circuit(weights):
+@qml.qnode(dev, diff_method="backprop")
+def quantum_circuit(weights):
     """Quantum generator's parametrized circuit"""
 
-        weights = weights.reshape(q_depth, n_qubits)
+    weights = weights.reshape(q_depth, n_qubits)
 
-        # Initialise latent vectors
-        for i in range(n_qubits):
-            qml.Hadamard(wires=i)
+    # Initialise latent vectors
+    for i in range(n_qubits):
+        qml.Hadamard(wires=i)
 
-        # Repeat each layer
-        for i in range(q_depth):
-            # Parameterised layer
-            for y in range(n_qubits):
-                qml.RY(weights[i][y], wires=y)
+    # Repeat each layer
+    for i in range(q_depth):
+        # Parameterised layer
+        for y in range(n_qubits):
+            qml.RY(weights[i][y], wires=y)
 
-            # Entangling blocks of control Z gates
-            for y in range(n_qubits - 1):
-                qml.CZ(wires=[y, y + 1])
+        # Entangling blocks of control Z gates
+        for y in range(n_qubits - 1):
+            qml.CZ(wires=[y, y + 1])
 
-            qml.Barrier(wires=list(range(n_qubits)), only_visual=True)
+        qml.Barrier(wires=list(range(n_qubits)), only_visual=True)
 
-        return qml.probs(wires=list(range(n_qubits)))</code></pre>
+    return qml.probs(wires=list(range(n_qubits)))</code></pre>
                     </div>
 
                     <p>
-                        The classical discriminator is a fully connected neural network with two hidden layers, consisting in 50 and 20 nodes respectively
-                        along with a LeakyRelu activation function both, finally an output layer of a single node with a sigmoid activation function to
-                        return the probability of a input to be a real sample. The input layer shape depends on the number of possible outcomes the random 
-                        variable of the training data can take. The input of the discriminator are the pseudo-probabilities of a batch of samples from the
-                        random variable. 
+                        The classical discriminator is a fully connected neural network with two hidden layers, containing 50 
+                        nodes in the first layer and 20 nodes in the second layer, both with a LeakyRelu activation function and, 
+                        finally, an output layer of a single node with a sigmoid activation function to return the probability 
+                        of an input to be a generated sample. The input layer shape depends on the number of possible outcomes 
+                        the random variable of the training data can take. The discriminator's input is the pseudo-probabilities 
+                        of a batch of samples from the random variable. 
                     </p>
 
                     <div class="code-block">
                         <pre><code class="language-python">class Discriminator(nn.Module):
-        """Fully connected classical discriminator"""
+    """Fully connected classical discriminator"""
 
-        def __init__(self):
-            super().__init__()
+    def __init__(self):
+        super().__init__()
 
-            self.model = nn.Sequential(
-                # Inputs to first hidden layer (num_input_features -> 50)
-                nn.Linear(num_input_features, 50),
-                nn.LeakyReLU(),
+        self.model = nn.Sequential(
+            # Inputs to first hidden layer (num_input_features -> 50)
+            nn.Linear(num_input_features, 50),
+            nn.LeakyReLU(),
 
-                # First hidden layer (50 -> 20)
-                nn.Linear(50, 20),
-                nn.LeakyReLU(),
-                
-                # Second hidden layer (20 -> 1)
-                nn.Linear(20, 1),
-                nn.Sigmoid(),
-            )
-
-        def forward(self, x):
-            x = x.reshape(x.size(0), -1)
+            # First hidden layer (50 -> 20)
+            nn.Linear(50, 20),
+            nn.LeakyReLU(),
             
-            return self.model(x)</code></pre>
+            # Second hidden layer (20 -> 1)
+            nn.Linear(20, 1),
+            nn.Sigmoid(),
+        )
+
+    def forward(self, x):
+        x = x.reshape(x.size(0), -1)
+        
+        return self.model(x)</code></pre>
                     </div>
                     
 
                     <p>
-                        I chose four simple scenarios to simulate: Rolling of two six-sided dice, coin toss sequences, particle time decay
-                        and two dimensional random walk. In this implementation, the quantum circuit returns the probability of measure the 
-                        elements in the basis state, and each element represent a possible outcome from the simulations, once trained, the generator
-                        is used to produce samples simulating an single event, the training process was the following:
+                        I chose four simple scenarios to simulate: The rolling of two six-sided dice, coin toss sequences, 
+                        particle time decay, and two-dimensional random walks. In this implementation, the quantum circuit 
+                        returns the probability of measuring the elements in the basis state, and each element represents a 
+                        possible outcome from the simulations. Once trained, the generator produces samples simulating a single 
+                        event. The training process was the following:
                         <ul>
                             <li><b>Data Generation</b></li> 
-                                The training dataset was generated classically, composed by 1000000 samples for each scenario
+                                The training dataset was generated classically, composed by \(10^6\) samples for each scenario
                                 and splitted into 1000 batches.
                             
                             <li><b>Calculate Probabilities</b></li>
@@ -304,8 +305,8 @@
                     <h2>Using a QGAN to generate gluon initiated jets</h2>
 
                     <p>
-                        Moving to a more complex data distribution, the dataset of detector images from Quark initiated jets <a href="#ref5" class="citation" id="cite">[5]</a> 
-                        was used, specifically I used the electromagnetic calorimeter images which measures energy deposits from electromagnetic particles.
+                        Moving to a more complex data distribution, I took the dataset of detector images from Quark-initiated jets <a href="#ref5" class="citation" id="cite">[5]</a>. 
+                        Specifically, I used the electromagnetic calorimeter images that measure energy deposits from electromagnetic particles.
                     </p>
 
                     <figure>
@@ -314,11 +315,11 @@
                     </figure>
 
                     <p>
-                        Due to the high complexity of the dataset, the first architecture was not enough powerful to resemble the training dataset distribution,
-                        that is why I implemented the architecture proposed by He Liang et. al.<a href="#ref6" class="citation" id="cite">[6]</a>, which uses an auxiliary register to provide 
-                        the PQC more possible solution states along with a post-processing step which allows the output of the quantum generator to get 
-                        rid of the normalization constraint of the measurement. This architecture also uses many generators to generate a fraction of the image each, 
-                        with this, each generator can focus on a simpler distribution rather than the more complex complete image.
+                        Due to the high complexity of the dataset, the first architecture was not powerful enough to resemble the training dataset distribution, 
+                        which is why I implemented the architecture proposed by He Liang et. al.<a href="#ref6" class="citation" id="cite">[6]</a>, which uses 
+                        an auxiliary register to provide the PQC more possible solution states along with a post-processing step which allows the output of the 
+                        quantum generator to get rid of the normalization constraint of the measurement. This architecture also uses many generators, each responsible 
+                        for producing a fraction of the image. This approach allows each generator to focus on a simpler distribution rather than the more complex complete image.
 
                     </p>
 
@@ -328,28 +329,28 @@
                     </figure>
 
                     <p>
-                        Quantum gates are unitary operators and by definition, are linear transformations. For the most simple generative task as the
-                        examples from the section above these transformation are enough, however for more complex data distribution non-linear transformation 
-                        could be needed. for the pre-measurement state of the generator we have
+                        Quantum gates are unitary operators and, by definition, are linear transformations. With the most simple generative tasks like the examples from 
+                        the section above, these transformations are good enough. However, for more complex data distribution, non-linear transformation could be needed. 
+                        For the pre-measurement state of the generator, we have:
 
                         \[ |\Psi(z)\rangle = U_G(\theta)|z\rangle\]
 
                         Where \(U_G(\theta)\) represents the overall unitary operator of the parametrized layers. If we take a partial measurement \(\Pi\)
-                        and trace out the ancillary subsystem
+                        and trace out the ancillary subsystem:
 
                         \[\rho(z) = \frac{\operatorname{Tr}_A (\Pi \otimes |\Psi(z)\rangle \langle \Psi(z)|)}{\operatorname{Tr} (\Pi \otimes |\Psi(z)\rangle
                         \langle \Psi(z)|)} = \frac{\operatorname{Tr}_A (\Pi \otimes |\Psi(z)\rangle \langle \Psi(z)|)}{\langle \Psi(z) | \Pi \otimes 
                         |\Psi(z)\rangle} \]
 
                         The post measurement state \(p(z)\), is dependent on \(z\) on the numerator and denominator. This implies a non-linear transformation 
-                        was done. 
+                        was performed over \(|\Psi(z)\rangle\). 
 
                     </p>
 
                     <p>
-                        On the other hand I wanted the output of the quantum generator to represent energy deposits, then the output should
-                        be able to take values bigger than 1 and the sum of the elements from the output do not necesarily need to sum up to 1. These two 
-                        limitations can be solved by applying the following transformation to the output of the circuit.
+                        On the other hand, I wanted the output of the quantum generator to represent energy deposits, so the output should be able to take 
+                        values larger than 1, and the elements from the quantum circuit output do not necessarily need to sum up to 1. These limitations can 
+                        be overcome by applying the following transformation to the quantum circuit output of the circuit.
 
                         \[ \tilde{x} = \frac{g}{y}\]
 
@@ -362,10 +363,10 @@
                                 transformation 
                                  
                             <li><b>Generator and discriminador</b></li>
-                                The model was trained duting 30 epoch using Stochastic Gradient Descent optimizer, the classical discriminator consisting
-                                in 2 hidden layers of 128 and 32 nodes respectively, both using LeakyRelu activation function, and an output layer with a 
-                                single node and sigmoid activation function. On the other hand each of the two generators was conformed by 7 feature qubits and 2 auxiliary
-                                qubits.
+                                The model was trained during 30 epochs using a Stochastic Gradient Descent optimizer, the classical discriminator containing 
+                                50 nodes in the first layer and 20 nodes in the second layer, both with a LeakyRelu activation function and an output layer 
+                                with a single node and sigmoid activation function. On the other hand, each of the two generators is a circuit with seven feature 
+                                qubits, two auxiliary qubits, and ten layers.
                         </ul>
                     </p>
 
@@ -406,11 +407,11 @@
                 <section id="conclusions" class="anchor-target">
                     <h2>Future work and conclusion</h2>
                     <p>
-                        We can observe from results of the simple simulations and the gluon initiated jets images generation, that the implementation
-                        of QGANs in the generation of data with simple and complex distributions is feasible. It would be interesting to explore how 
-                        good this implementation is generating different data distributions correlated to each other, for example the three subdetector
-                        channels from the detector images <a href="#ref5" class="citation" id="cite">[5]</a>. The most interesting part of this project was
-                        delve into a promissing method for alternative future high-energy physics simulations. 
+                        From the simple simulations and gluon-initiated jet image generation, we observe that implementing QGANs for data 
+                        generation with simple and complex distributions is feasible. It would be interesting to investigate how well this 
+                        implementation generates different yet correlated data distributions, such as the three subdetector channels from 
+                        detector images <a href="#ref5" class="citation" id="cite">[5]</a>. The most exciting part of this project was 
+                        exploring a promising method for future high-energy physics simulations. 
 
                     </p>
 
