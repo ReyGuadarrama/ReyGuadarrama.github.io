@@ -80,7 +80,7 @@
                         the supervision of mentors. 
                         Participating in GSoC was one of the most enriching and challenging experiences of my life. My project, 
                         <a href="https://summerofcode.withgoogle.com/programs/2024/projects/HnazN3SK" id="cite">QGANs for Monte
-                        Carlo Simulations</a> aaims to investigate the feasibility of using Quantum Generative Adversarial Networks 
+                        Carlo Simulations</a> aims to investigate the feasibility of using Quantum Generative Adversarial Networks 
                         to generate events for Monte Carlo simulations. The code of this project is available in 
                         <a href="https://github.com/ML4SCI/QMLHEP/tree/main/Quantum_GAN_for_HEP_Luis_Rey_Guadarrama" id="cite">Git Hub</a>.</p>
                     <p>
@@ -91,20 +91,19 @@
                 <section id="Monte-Carlo" class="anchor-target">
                     <h2>Monte Carlo Simulations</h2>
                     <p>
-                        Monte Carlo Simulation is a computational technique that uses repeated random sampling to 
-                        estimate the probability of various outcomes in uncertain scenarios. Developed by John von 
-                        Neumann and Stanislaw Ulam during World War II, it is named after the Monte Carlo casino due 
-                        to its reliance on chance. The method is widely used in fields like finance, project management, 
-                        and AI for risk assessment and decision-making. It involves setting up a predictive model, 
-                        specifying probability distributions for input variables, and running several simulations to 
-                        generate a range of possible outcomes.
+                        Monte Carlo Simulation is a computational technique that uses repeated random sampling to estimate 
+                        the probability of various outcomes in uncertain scenarios. Developed by John von Neumann and Stanislaw 
+                        Ulam during World War II, it is named after the Monte Carlo casino due to its reliance on chance. The 
+                        method is widely used in finance, project management, and AI for risk assessment and decision-making. It 
+                        involves setting up a predictive model, specifying probability distributions for input variables, and 
+                        running several simulations to generate possible outcomes.
                     </p>
 
                     <p>
-                        Monte Carlo Simulation differs from typical forecasting models by predicting a range of outcomes 
-                        based on estimated values rather than fixed inputs. It builds a model using probability 
-                        distributions for variables with inherent uncertainty. By recalculating results repeatedly with
-                        different random values, often thousands of times, it generates a wide array of possible outcomes.
+                        Monte Carlo Simulation differs from typical forecasting models by predicting a range of outcomes based 
+                        on estimated values rather than fixed inputs. It builds a model using probability distributions for variables 
+                        with inherent uncertainty. By recalculating results repeatedly with different random values, often thousands 
+                        of times, it generates a wide array of possible outcomes.
                     </p>
                 </section>
 
@@ -113,14 +112,14 @@
 
                     <p>
                         Generative Adversarial Networks (GANs) is a framework for estimating generative models using an adversarial process
-                        <a href="#ref1" class="citation" id="cite">[1]</a>. This framework involves training two models simultaneously:
-                        a generative model \(G\) that captures the data distribution and a discriminative model \(D\) that distinguishes between 
-                        samples from the training data distribution and those produced by \(G\). The goal is to improve \(G\) so that \(D\) cannot 
-                        diferentiate between training data and generated data. This process is similar to a minimax two-player game, 
-                        where \(G\) tries to fool \(D\) while \(D\) aims to detect the fake data. \(D\) is trainned to maximize the probability of
-                        assigning the correct label to both the true data samples and the generated samples from \(G\). Simultaneously
-                        \(G\) is trainned to minimize the probabilitiy of \(D\) correctly distinguish between true an generated samples. 
-                        This is done by optimizing the loss function:
+                        <a href="#ref1" class="citation" id="cite">[1]</a>. This framework involves training two models simultaneously: a generative model
+                        \(G\) that captures the data distribution and a discriminative model \(D\) that distinguishes between samples from the training 
+                        data distribution and those produced by \(G\). The goal is to improve \(G\) so that \(D\) cannot 
+                        differentiate between training data and generated data. This process is similar to a minimax two-player game, 
+                        where \(G\) tries to fool \(D\) while \(D\) aims to detect the fake data. We train \(D\) to maximize the probability of assigning 
+                        the correct label to both the training data samples and the generated samples from \(G\). Simultaneously, 
+                        we train \(G\) to minimize the chances of \(D\) correctly distinguishing between training and generated samples.
+                        This process involves optimizing the loss function:
                         
                         \[V(D, G) = \mathbb{E}_{\mathbf{x} \sim p_{\text{data}}(\mathbf{x})} [\log D(\mathbf{x})] + 
                         \mathbb{E}_{\mathbf{z} \sim p_{\mathbf{z}}(\mathbf{z})} [\log (1 - D(G(\mathbf{z})))] \]
@@ -161,7 +160,7 @@
                         One of the key steps for the Monte Carlo Method is to specify the probability distribution of independent variables. 
                         An incorrect choice of the distribution can lead to inaccuracies. In my project, I try to address this difficulty by 
                         implementing QGANs for Monte Carlo Simulations. I used the architecture proposed by Zoufal et. al.
-                        <a href="#ref3" class="citation" id="cite">[4]</a> composed of a quantum generator with an equal superposition as a 
+                        <a href="#ref3" class="citation" id="cite">[4]</a>, composed of a quantum generator with an equal superposition as a 
                         reference state followed by layers of parametrized \(\text{Pauli-Y}\) rotations followed by an entangling block of 
                         \(\text{control-Z}\) gates and a classical discriminator consisting of dense neural network.
                     </p>
@@ -260,17 +259,18 @@ def quantum_circuit(weights):
                         event. The training process was the following:
                         <ul>
                             <li><b>Data Generation</b></li> 
-                                The training dataset was generated classically, composed by \(10^6\) samples for each scenario
-                                and splitted into 1000 batches.
+                                The training dataset was generated classically, composed of \(10^6\) samples for each scenario, 
+                                and split into 1000 batches.
                             
                             <li><b>Calculate Probabilities</b></li>
-                                The pseudo-probabilities of each batch was calculated, these was used to
-                                training the quantum generator, which returns the probabilities of each element in the basis state
+                                The pseudo-probabilities of each batch were calculated and used to train the quantum generator, 
+                                which returns the probabilities of each element in the basis state.
 
                             <li><b>Generator and discriminador</b></li>
-                                Two neural network models are defined. The discriminator is a classical 
-                                neural network that tries to distinguish between real and fake data samples, while the generator is a quantum 
-                                circuit designed to produce data samples that resembles the real data distribution.
+                                Two neural network models are defined. The discriminator is a classical neural network that tries 
+                                to distinguish between real and fake data samples. At the same time, the generator is a quantum 
+                                circuit designed to produce data samples that resemble the real data distribution.
+
 
                         </ul>
 
@@ -342,7 +342,7 @@ def quantum_circuit(weights):
                         \langle \Psi(z)|)} = \frac{\operatorname{Tr}_A (\Pi \otimes |\Psi(z)\rangle \langle \Psi(z)|)}{\langle \Psi(z) | \Pi \otimes 
                         |\Psi(z)\rangle} \]
 
-                        The post measurement state \(p(z)\), is dependent on \(z\) on the numerator and denominator. This implies a non-linear transformation 
+                        The post-measurement state \(p(z)\), is dependent on \(z\) on the numerator and denominator. This implies a non-linear transformation 
                         was performed over \(|\Psi(z)\rangle\). 
 
                     </p>
@@ -360,7 +360,7 @@ def quantum_circuit(weights):
                         <ul>
                             <li><b>Data Preprocessing</b></li> 
                                 From the ECAL channel, 512 images were down-scaled from \(125 \times 125\) to \(8 \times 8\) images using a sumpool 
-                                transformation 
+                                transformation.
                                  
                             <li><b>Generator and discriminador</b></li>
                                 The model was trained during 30 epochs using a Stochastic Gradient Descent optimizer, the classical discriminator containing 
