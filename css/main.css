@@ -81,7 +81,6 @@ header {
     transition: 0.4s;
 }
 
-
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -213,20 +212,45 @@ main {
     margin-bottom: 20px;
 }
 
+.blogpost-cards-mobile {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     main {
-        margin-top: 20px;
+        margin-top: 80px;
     }
+
+    .blogpost-cards {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .blogpost-cards-mobile {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
     .card {
         width: 100%;
         height: 280px;
     }
+
     .card h2 {
         font-size: 1em;
     }
+
     .read-more {
         display: none;
     }
+
+    a { text-decoration: none; }
+
 }
 
 
