@@ -192,16 +192,17 @@ article {
     text-align: justify;
 }
 
+.post-content h2 { 
+    text-align: left;
+}
+
 
 @media (max-width: 768px) {
-    main {
-        justify-content: left;
-    }
-    
+
     article {
         padding: 15px;
     }
-
+    
 }
 
 /* Estilos bloques de ecuacion */
