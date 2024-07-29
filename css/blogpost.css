@@ -68,25 +68,92 @@ header {
     font-size: 16px;
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 2px 0;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    } 
+
+    .logo-blog {
+        margin-bottom: 10px;
+    }
+
+    .header-navbar {
+        width: 100%;
+    }
+
+    .header-navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header-navbar ul.show {
+        display: flex;
+    }
+
+    .header-navbar ul li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-self: flex-end;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
 
 /* Article styles */
 
 main {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     margin-top:50px;
-    flex: 1 0 auto
+    flex: 1 0 auto;
+    box-sizing: border-box;
 }
 
 article {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     margin: 0 auto;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .anchor-target::before {
@@ -124,6 +191,19 @@ article {
     font-size: 1.1em;
     text-align: justify;
 }
+
+@media (max-width: 768px) {
+    main {
+        justify-content: left;
+    }
+    
+    article {
+        padding: 15px;
+    }
+
+}
+
+
 
 /* Estilos bloques de código */
 

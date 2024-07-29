@@ -1,3 +1,16 @@
+
+// Menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', function() {
+        navUl.classList.toggle('show');
+        menuToggle.classList.toggle('active');
+    });
+});
+
+// Codeblock lines
 document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelectorAll('pre code').forEach((block) => {
         hljs.highlightElement(block);
@@ -15,6 +28,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+
+//
 document.addEventListener('DOMContentLoaded', function() {
     const menuItems = document.querySelectorAll('.menu-item');
     const sections = document.querySelectorAll('section');
