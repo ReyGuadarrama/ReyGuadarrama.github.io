@@ -120,14 +120,21 @@
                         the correct label to both the training data samples and the generated samples from \(G\). Simultaneously, 
                         we train \(G\) to minimize the chances of \(D\) correctly distinguishing between training and generated samples.
                         This process involves optimizing the loss function:
-                        
+                    </p>
+
+                    <div class="equation-container">
                         \[V(D, G) = \mathbb{E}_{\mathbf{x} \sim p_{\text{data}}(\mathbf{x})} [\log D(\mathbf{x})] + 
                         \mathbb{E}_{\mathbf{z} \sim p_{\mathbf{z}}(\mathbf{z})} [\log (1 - D(G(\mathbf{z})))] \]
-
+                    </div>
+                        
+                        
+                    <p>
                         where \(D(\mathbf{x})\) represents the probability that \(\mathbf{x}\) came from the true data and \(D(G(\mathbf{z}))\) the probability of 
-                        \(D\) correctly labeling a generated sample \(G(\mathbf{z})\) from the latent space \(\mathbf{z}\).   
-                    
+                        \(D\) correctly labeling a generated sample \(G(\mathbf{z})\) from the latent space \(\mathbf{z}\).
                     </p>
+                           
+                    
+                    
 
                     <figure>
                         <img src="../images/GSoC-2024/GAN_diagram.png" alt="GAN-diagram" style="max-width: 100%; height: auto;">
@@ -332,20 +339,28 @@ def quantum_circuit(weights):
                         Quantum gates are unitary operators and, by definition, are linear transformations. With the most simple generative tasks like the examples from 
                         the section above, these transformations are good enough. However, for more complex data distribution, non-linear transformation could be needed. 
                         For the pre-measurement state of the generator, we have:
+                    </p>
 
+                    <div class="equation-container">
                         \[ |\Psi(z)\rangle = U_G(\theta)|z\rangle\]
-
+                    </div>
+                    
+                    <p>
                         Where \(U_G(\theta)\) represents the overall unitary operator of the parametrized layers. If we take a partial measurement \(\Pi\)
                         and trace out the ancillary subsystem:
+                    </p>
 
+                    <div class="equation-container">
                         \[\rho(z) = \frac{\operatorname{Tr}_A (\Pi \otimes |\Psi(z)\rangle \langle \Psi(z)|)}{\operatorname{Tr} (\Pi \otimes |\Psi(z)\rangle
                         \langle \Psi(z)|)} = \frac{\operatorname{Tr}_A (\Pi \otimes |\Psi(z)\rangle \langle \Psi(z)|)}{\langle \Psi(z) | \Pi \otimes 
                         |\Psi(z)\rangle} \]
-
+                    </div>
+                        
+                    <p>
                         The post-measurement state \(p(z)\), is dependent on \(z\) on the numerator and denominator. This implies a non-linear transformation 
                         was performed over \(|\Psi(z)\rangle\). 
-
                     </p>
+                    
 
                     <p>
                         On the other hand, I wanted the output of the quantum generator to represent energy deposits, so the output should be able to take 

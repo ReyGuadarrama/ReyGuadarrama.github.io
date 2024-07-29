@@ -192,6 +192,7 @@ article {
     text-align: justify;
 }
 
+
 @media (max-width: 768px) {
     main {
         justify-content: left;
@@ -203,7 +204,24 @@ article {
 
 }
 
+/* Estilos bloques de ecuacion */
 
+.equation-container {
+    max-width: 100%;
+    overflow: auto;
+    white-space: nowrap; /* Evita que la ecuación se divida en varias líneas */
+    padding: 10px 0; /* Añade algo de espacio arriba y abajo */
+}
+
+.equation-container::-webkit-scrollbar {
+    height: 5px;
+    background-color: #F5F5F5;
+}
+
+.equation-container::-webkit-scrollbar-thumb {
+    background-color: #0bafd8;
+    border-radius: 2px;
+}
 
 /* Estilos bloques de código */
 
@@ -252,6 +270,16 @@ code .line:before {
     font-size: 13px;
     border-radius: 0 10px 0 10px;
     z-index: 1;
+}
+
+pre code::-webkit-scrollbar {
+    height: 5px;
+    background-color: #F5F5F5;
+}
+
+pre code::-webkit-scrollbar-thumb {
+    background-color: #0bafd8;
+    border-radius: 2px;
 }
 
 /* Estilos para las figuras */
