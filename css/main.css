@@ -10,44 +10,53 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Header styles  */
-
+/* Header styles */
 header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: #f9fafc;
-    padding: 20px 0;
+    background-color: rgba(249, 250, 252, 0.95);
+    padding: 16px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* gradient strip */
+.gradient-strip {
+    position: fixed;
+    top: 50px; /* Adjust based on your header height */
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, 
+        #ff00ff 0%,      /* Neon Pink */
+        #00ffff 25%,     /* Cyan */
+        #08b2e6 50%,     /* Your existing blue */
+        #7000ff 75%,     /* Purple */
+        #ff00ff 100%     /* Back to Neon Pink */
+    );
+    z-index: 999;
+    animation: gradient 15s ease infinite;
+    background-size: 200% auto;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center; /* Center the navigation */
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.logo-text {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
+.header-navbar {
+    width: auto; /* Allow nav to take natural width */
 }
 
 .header-navbar ul {
@@ -55,66 +64,80 @@ header {
     padding: 0;
     margin: 0;
     display: flex;
-}
-
-.header-navbar ul li {
-    margin-left: 20px;
+    gap: 40px;
+    justify-content: center; /* Center the navigation items */
 }
 
 .header-navbar ul li a {
     text-decoration: none;
     color: #333;
     font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 0;
+    position: relative;
+}
+
+.header-navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #00ffff, #ff00ff); /* Cyberpunk gradient for hover effect */
+    transition: width 0.3s ease;
+}
+
+.header-navbar ul li a:hover::after {
+    width: 100%;
 }
 
 .menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    gap: 6px;
 }
 
 .menu-toggle span {
     width: 25px;
-    height: 3px;
+    height: 2px;
     background-color: #333;
-    margin: 2px 0;
     transition: 0.4s;
 }
 
 @media (max-width: 768px) {
     .container {
-        flex-direction: column;
-        align-items: flex-start;
+        justify-content: flex-end;
     } 
-
-    .logo {
-        margin-bottom: 10px;
-    }
 
     .header-navbar {
         width: 100%;
     }
 
+    .menu-toggle {
+        display: flex;
+        position: relative;
+        z-index: 1001;
+    }
+
     .header-navbar ul {
         display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(249, 250, 252, 0.98);
         flex-direction: column;
-        width: 100%;
+        align-items: center;
+        padding: 80px 20px 40px;
+        gap: 20px;
     }
 
     .header-navbar ul.show {
         display: flex;
-    }
-
-    .header-navbar ul li {
-        margin: 10px 0;
-    }
-
-    .menu-toggle {
-        display: flex;
-        align-self: flex-end;
-        position: absolute;
-        top: 20px;
-        right: 20px;
     }
 
     .menu-toggle.active span:nth-child(1) {
@@ -128,14 +151,17 @@ header {
     .menu-toggle.active span:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+
+    .gradient-strip {
+        top: 54px; /* Adjust for mobile header height */
+    }
 }
 
 /* Hero Section Styles */
 .hero-section {
-    padding: 80px 20px;
+    padding: 40px 20px;
     background-color: white;
     margin-top: 120px;
-    width: 100%;
 }
 
 .hero-container {
