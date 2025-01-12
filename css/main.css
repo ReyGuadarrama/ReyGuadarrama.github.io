@@ -435,6 +435,7 @@ main > section:nth-child(odd) {
     margin-bottom: 20px;
     background: linear-gradient(90deg, #00ffff, #ff00ff);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
