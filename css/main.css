@@ -265,6 +265,135 @@ header {
 }
 
 
+/* Technical Expertise Section */
+.expertise-section {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+}
+
+.expertise-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.expertise-title {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.expertise-title h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.expertise-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.expertise-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.expertise-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.expertise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.expertise-card:hover::before {
+    transform: scaleX(1);
+}
+
+.expertise-card h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.expertise-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.expertise-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.expertise-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #08b2e6;
+}
+
+/* Icon styles */
+.expertise-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 1024px) {
+    .expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .expertise-title h2 {
+        font-size: 28px;
+    }
+
+    .expertise-card {
+        padding: 25px;
+    }
+}
+
+
 
 
 /* Blogpost cards styles */
