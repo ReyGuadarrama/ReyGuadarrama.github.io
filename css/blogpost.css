@@ -1,3 +1,4 @@
+/* Base styles */
 html, body {
     height: 100%;
     margin: 0;
@@ -10,77 +11,119 @@ body {
     font-family: Arial, sans-serif;
 }
 
-
-/* header styles */
-
+/* Header styles */
 header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: #f9fafc;
-    padding: 20px 0;
+    background-color: rgba(249, 250, 252, 0.95);
+    padding: 16px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.gradient-strip {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, 
+        #ff00ff 0%,
+        #00ffff 25%,
+        #08b2e6 50%,
+        #7000ff 75%,
+        #ff00ff 100%
+    );
+    z-index: 999;
+    animation: gradient 15s ease infinite;
+    background-size: 200% auto;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
 }
 
-.logo-blog {
-    display: flex;
-    align-items: center;
-}
-
-.logo-blog img {
-    width: 35px;
-    height: 35px;
-    border-radius: 10%;
-    margin-right: 10px;
-}
-
-.logo-blog-text {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-}
-
+/* Navigation */
 .header-navbar ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
-}
-
-.header-navbar ul li {
-    margin-left: 20px;
+    gap: 40px;
 }
 
 .header-navbar ul li a {
     text-decoration: none;
     color: #333;
     font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 0;
+    position: relative;
 }
 
-.menu-toggle {
-    display: none;
-    flex-direction: column;
+.header-navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    transition: width 0.3s ease;
+}
+
+.header-navbar ul li a:hover::after {
+    width: 100%;
+}
+
+/* Menu */
+.menu-container {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    width: 16%;
+    background-color: #f9fafc;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.menu-item {
+    padding: 12px 16px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 2px 0;
-    transition: 0.4s;
+.menu-item:hover {
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+    transform: translateX(5px);
 }
+
+.menu-item.active {
+    font-weight: 500;
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.15), rgba(255, 0, 255, 0.15));
+}
+
 
 @media (max-width: 768px) {
     .container {
@@ -134,26 +177,27 @@ header {
 
 /* Article styles */
 
+/* Main Content */
 main {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    margin-top:50px;
+    margin-top: 80px;
     flex: 1 0 auto;
+    padding: 0 20px;
     box-sizing: border-box;
 }
 
 article {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
     width: 100%;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .anchor-target::before {
@@ -163,20 +207,37 @@ article {
     margin-top: -50px; 
 }
 
+/* Post Header */
 .post-header {
-    border-bottom: 1px solid #eee;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
     padding-bottom: 20px;
-    margin-bottom: 20px;
+}
+
+.post-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
 }
 
 .post-title {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.3;
 }
 
 .post-meta {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 15px;
     color: #666;
 }
 
@@ -184,18 +245,31 @@ article {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-right: 15px;
 }
 
+/* Post Content */
 .post-content {
-    font-size: 1.1em;
-    text-align: justify;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
 }
 
-.post-content h2 { 
-    text-align: left;
+.post-content h2 {
+    font-size: 28px;
+    color: #333;
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
 }
 
+.post-content p {
+    margin-bottom: 20px;
+}
+
+.anchor-target {
+    margin-top: 100px;
+    scroll-margin-top: 250px;  
+}
 
 @media (max-width: 768px) {
 
@@ -205,33 +279,27 @@ article {
     
 }
 
-/* Estilos bloques de ecuacion */
-
+/* Equation Blocks */
 .equation-container {
-    max-width: 100%;
-    overflow: auto;
-    white-space: nowrap; /* Evita que la ecuación se divida en varias líneas */
-    padding: 10px 0; /* Añade algo de espacio arriba y abajo */
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 30px 0;
+    overflow-x: auto;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
 }
 
-.equation-container::-webkit-scrollbar {
-    height: 5px;
-    background-color: #F5F5F5;
-}
 
-.equation-container::-webkit-scrollbar-thumb {
-    background-color: #0bafd8;
-    border-radius: 2px;
-}
-
-/* Estilos bloques de código */
+/* Code Blocks */
 
 pre {
-    background-color: #eaeef3;
+    background-color: #f8f9fa;
     border-radius: 10px;
-    padding: 16px;
+    padding: 20px 2px;
     overflow: auto;
     position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+
 }
 code {
     font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -265,65 +333,62 @@ code .line:before {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #3e4451;
-    color: #f9fafc;
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+    color: #333;
     padding: 2px 6px;
     font-size: 13px;
     border-radius: 0 10px 0 10px;
     z-index: 1;
 }
 
-pre code::-webkit-scrollbar {
-    height: 5px;
-    background-color: #F5F5F5;
+pre code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
-pre code::-webkit-scrollbar-thumb {
-    background-color: #0bafd8;
-    border-radius: 2px;
-}
-
-/* Estilos para las figuras */
-
+/* Figures and Images */
 figure {
-    margin: 0;
-    padding: 0;
+    margin: 30px 0;
     text-align: center;
 }
 
 figure img {
     max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 figcaption {
-    text-align: left;
-    font-size: 0.9em;
+    margin-top: 15px;
     color: #666;
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 20px;
+    font-size: 0.9em;
+    font-style: italic;
 }
 
-/* Estilos para referencias */
-
-h1, h2 {
-    color: #333;
-}
-
-.citation {
-    vertical-align: middle;
-    font-size: medium;
+/* Links and Citations */
+#cite {
+    color: #08b2e6;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+#cite:hover {
+    color: #ff00ff;
+}
 
+/* References Section */
 #references {
-    margin-top: 40px;
-    border-top: 1px solid #ccc;
-    padding-top: 20px;
+    margin-top: 10px;
+    padding-top: 0px;
+    border-top: 2px solid #f0f0f0;
+}
+
+#references p {
+    margin-bottom: 15px;
+    font-size: 0.95em;
+    padding-left: 25px;
+    text-indent: -25px;
 }
 
 /* Estilos del menú */
