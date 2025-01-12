@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Rey Guadarrama</title>
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="header-navbar">
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="gradient-strip"></div>
+    </header>
+
+    <main>
+        <!-- Featured Projects Section -->
+        <section class="featured-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h1>Featured Projects</h1>
+                    <p>Selected works in quantum computing and machine learning</p>
+                </div>
+                
+                <div class="featured-grid">
+                    <!-- GSoC Project -->
+                    <div class="featured-card">
+                        <div class="card-content">
+                            <div class="project-type">Google Summer of Code 2024</div>
+                            <h2>QGANs for Monte Carlo Simulations</h2>
+                            <p>Developed quantum generative adversarial networks for Monte Carlo simulations in high-energy physics. Successfully implemented a novel architecture for generating gluon-initiated jets with improved efficiency and accuracy.</p>
+                            <div class="tech-stack">
+                                <span>PennyLane</span>
+                                <span>PyTorch</span>
+                                <span>Quantum ML</span>
+                                <span>Physics</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ML4SCI/QMLHEP/tree/main/Quantum_GAN_for_HEP_Luis_Rey_Guadarrama" target="_blank" class="btn-link">
+                                    <i class="fab fa-github"></i> Repository
+                                </a>
+                                <a href="posts/GSoC-2024.html" class="btn-link">
+                                    <i class="fas fa-book"></i> Case Study
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emerging Technologies Project -->
+                    <div class="featured-card">
+                        <div class="card-content">
+                            <div class="project-type">Mirai Innovation Lab</div>
+                            <h2>Intelligent Robot Guide Dog</h2>
+                            <p>Developed AI and navigation algorithms for an assistive robotic guide dog designed to help visually impaired users. Implemented computer vision and path planning systems for obstacle avoidance.</p>
+                            <div class="tech-stack">
+                                <span>Computer Vision</span>
+                                <span>Robotics</span>
+                                <span>Navigation</span>
+                                <span>AI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ReyGuadarrama" target="_blank" class="btn-link">
+                                    <i class="fab fa-github"></i> Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Projects Section -->
+        <section class="research-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Research Projects</h2>
+                    <p>Academic and research contributions</p>
+                </div>
+
+                <div class="research-grid">
+                    <!-- Research Project 1 -->
+                    <div class="research-card">
+                        <div class="card-content">
+                            <h3>Quantum Diffusion Models</h3>
+                            <p>Developed quantum implementations of diffusion models for quark and gluon jet generation. Research presented at NeurIPS 2024 Machine Learning with New Computational Paradigms Workshop.</p>
+                            <div class="tech-stack">
+                                <span>Quantum ML</span>
+                                <span>PennyLane</span>
+                                <span>Physics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Research Project 2 -->
+                    <div class="research-card">
+                        <div class="card-content">
+                            <h3>Wave Union TDC</h3>
+                            <p>Implemented a single measurement wave union TDC with subsampling-scheme-based codification. Published in Nuclear Instruments and Methods in Physics Research, A.</p>
+                            <div class="tech-stack">
+                                <span>Hardware</span>
+                                <span>Signal Processing</span>
+                                <span>Physics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Research Project 3 -->
+                    <div class="research-card">
+                        <div class="card-content">
+                            <h3>Quantum Image Encoding</h3>
+                            <p>Developed a quantum contrastive loss algorithm for encoding images into quantum states, optimizing state preparation for image classification tasks.</p>
+                            <div class="tech-stack">
+                                <span>Quantum Computing</span>
+                                <span>Computer Vision</span>
+                                <span>Machine Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="skills-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Technical Skills</h2>
+                    <p>Technologies and tools I work with</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-atom"></i> Quantum Computing</h3>
+                        <ul>
+                            <li>Quantum Machine Learning</li>
+                            <li>Quantum Circuit Design</li>
+                            <li>PennyLane & Qiskit</li>
+                            <li>NISQ Optimization</li>
+                            <li>Quantum Algorithms</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-brain"></i> Machine Learning</h3>
+                        <ul>
+                            <li>Deep Learning</li>
+                            <li>Generative AI & GANs</li>
+                            <li>Computer Vision</li>
+                            <li>PyTorch & TensorFlow</li>
+                            <li>Neural Network Architecture</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Programming</h3>
+                        <ul>
+                            <li>Python Development</li>
+                            <li>MATLAB & C++</li>
+                            <li>Git Version Control</li>
+                            <li>JavaScript & React</li>
+                            <li>Technical Documentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section class="awards-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Honors & Awards</h2>
+                    <p>Recognition and achievements</p>
+                </div>
+
+                <div class="awards-grid">
+                    <div class="award-card">
+                        <i class="fas fa-trophy"></i>
+                        <h3>ANUIES4MX Challenge Winner</h3>
+                        <p>Selected for the "Emergent Future Technology" program at Mirai Innovation Lab, Osaka, Japan</p>
+                    </div>
+
+                    <div class="award-card">
+                        <i class="fas fa-award"></i>
+                        <h3>Google Summer of Code</h3>
+                        <p>Selected contributor for ML4SCI organization's quantum computing projects</p>
+                    </div>
+
+                    <div class="award-card">
+                        <i class="fas fa-medal"></i>
+                        <h3>QOSF Mentorship</h3>
+                        <p>Selected participant in Quantum Open Source Foundation mentorship program</p>
+                    </div>
+
+                    <div class="award-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Quantum Winter School</h3>
+                        <p>Full scholarship for Microsoft Azure Quantum Winter School</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/reyguadarrama/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/ReyGuadarrama" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:luisrey7.lrv@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="copyright">&copy; All rights reserved.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

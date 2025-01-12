@@ -3,9 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog - Rey Guadarrama</title>
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    
+    <header>
+        <div class="container">
+            <nav class="header-navbar">
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="gradient-strip"></div>
+    </header>
+
+    <main>
+        <div class="blog-container">
+            <div class="blog-header">
+                <h1>Blog & Articles</h1>
+                <p>Insights and experiences in quantum computing and machine learning</p>
+            </div>
+
+            <div class="categories">
+                <span class="category-tag active">All</span>
+                <span class="category-tag">Quantum Computing</span>
+                <span class="category-tag">Machine Learning</span>
+                <span class="category-tag">Research</span>
+                <span class="category-tag">Projects</span>
+            </div>
+
+            <!-- GSoC Blog Post -->
+            <article class="blog-post">
+                <a href="../posts/GSoC-2024.html" class="blog-post-link">
+                    <div class="blog-post-content">
+                        <div class="blog-post-image" style="background-image: url('../images/GSoC-2024/ECAL_overlay.png');">
+                        </div>
+                        <div class="blog-post-text">
+                            <div>
+                                <span class="post-label">Quantum Computing</span>
+                                <h2>QGANs for Monte Carlo Simulations in High-Energy Physics</h2>
+                                <p>Exploring the implementation of Quantum Generative Adversarial Networks for Monte Carlo simulations in particle physics. A deep dive into my Google Summer of Code 2024 project with ML4SCI, focusing on quantum approaches to particle simulation.</p>
+                            </div>
+                            <div>
+                                <div class="post-meta">
+                                    <img src="../images/logos_portraits/me.png" alt="Rey Guadarrama">
+                                    <div class="post-meta-text">
+                                        <span class="author-name">Rey Guadarrama</span>
+                                        <span class="post-date">July 13, 2024 · 13 min read</span>
+                                    </div>
+                                </div>
+                                <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Optimizers Blog Post -->
+            <article class="blog-post">
+                <a href="../posts/Optimizers.html" class="blog-post-link">
+                    <div class="blog-post-content">
+                        <div class="blog-post-image" style="background-image: url('../images/GSoC-2024/Dense_NN.png');">
+                        </div>
+                        <div class="blog-post-text">
+                            <div>
+                                <span class="post-label">Machine Learning</span>
+                                <h2>Understanding Gradient Descent Optimizers</h2>
+                                <p>A comprehensive review of commonly used gradient descent optimization algorithms in deep learning. Examining the mechanics and applications of various optimizers including SGD, Adam, and RMSprop, with practical insights for implementation.</p>
+                            </div>
+                            <div>
+                                <div class="post-meta">
+                                    <img src="../images/logos_portraits/me.png" alt="Rey Guadarrama">
+                                    <div class="post-meta-text">
+                                        <span class="author-name">Rey Guadarrama</span>
+                                        <span class="post-date">July 5, 2024 · 10 min read</span>
+                                    </div>
+                                </div>
+                                <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Quantum Sudoku Blog Post -->
+            <article class="blog-post">
+                <a href="../posts/QGANs.html" class="blog-post-link">
+                    <div class="blog-post-content">
+                        <div class="blog-post-image" style="background-image: url('../images/QOSF-2024/qosf_logo.jpg');">
+                        </div>
+                        <div class="blog-post-text">
+                            <div>
+                                <span class="post-label">Quantum Computing</span>
+                                <h2>Quantum Sudoku Solver with NISQ Devices</h2>
+                                <p>Exploring the implementation and optimization of a quantum algorithm for solving 9x9 Sudoku puzzles on current quantum hardware. A detailed look at circuit optimization techniques and the challenges of working with NISQ devices.</p>
+                            </div>
+                            <div>
+                                <div class="post-meta">
+                                    <img src="../images/logos_portraits/me.png" alt="Rey Guadarrama">
+                                    <div class="post-meta-text">
+                                        <span class="author-name">Rey Guadarrama</span>
+                                        <span class="post-date">June 28, 2024 · 8 min read</span>
+                                    </div>
+                                </div>
+                                <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Quantum Image Processing Blog Post -->
+            <article class="blog-post">
+                <a href="#" class="blog-post-link">
+                    <div class="blog-post-content">
+                        <div class="blog-post-image" style="background-image: url('../images/GSoC-2024/PQC2png.png');">
+                        </div>
+                        <div class="blog-post-text">
+                            <div>
+                                <span class="post-label">Research</span>
+                                <h2>Quantum Contrastive Loss for Image Encoding</h2>
+                                <p>Investigating a novel quantum approach to image encoding using contrastive loss functions. Research presented at the Instituto de Física, UNAM, exploring the intersection of quantum computing and computer vision techniques.</p>
+                            </div>
+                            <div>
+                                <div class="post-meta">
+                                    <img src="../images/logos_portraits/me.png" alt="Rey Guadarrama">
+                                    <div class="post-meta-text">
+                                        <span class="author-name">Rey Guadarrama</span>
+                                        <span class="post-date">June 15, 2024 · 12 min read</span>
+                                    </div>
+                                </div>
+                                <span class="read-more">Coming Soon <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/reyguadarrama/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/ReyGuadarrama" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:luisrey7.lrv@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="copyright">&copy; All rights reserved.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
 </body>
 </html>
