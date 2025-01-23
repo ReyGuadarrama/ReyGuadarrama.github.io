@@ -195,9 +195,25 @@ header {
     transition: all 0.3s ease;
 }
 
+.research-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
 .research-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.research-card:hover::before {
+    transform: scaleX(1);
 }
 
 .research-card h3 {
@@ -269,6 +285,7 @@ header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    margin-top: 40px;
 }
 
 .skill-category {
@@ -280,6 +297,7 @@ header {
 }
 
 .skill-category:hover {
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 255, 0.2));
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
@@ -339,9 +357,26 @@ header {
     transition: all 0.3s ease;
 }
 
+
+.award-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
 .award-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.award-card:hover::before {
+    transform: scaleX(1);
 }
 
 .award-card i {
