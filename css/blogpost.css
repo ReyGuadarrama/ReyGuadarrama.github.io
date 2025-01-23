@@ -271,6 +271,22 @@ article {
     scroll-margin-top: 250px;  
 }
 
+.hero-button-primary {
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.hero-button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+}
+
 @media (max-width: 768px) {
 
     article {
