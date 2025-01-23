@@ -506,12 +506,16 @@ main > section:nth-child(odd) {
 }
 
 .project-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
     background: white;
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
+    cursor: pointer;
 }
 
 .project-card:hover {
@@ -777,6 +781,9 @@ main {
     background: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .contact-method:hover {
