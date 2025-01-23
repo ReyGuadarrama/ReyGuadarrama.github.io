@@ -171,9 +171,52 @@ main {
     display: block;
 }
 
+.status {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #08b2e6;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.status {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    background:rgba(255, 0, 255, 0.1);
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.status:hover {
+    background:rgba(255, 0, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.blog-post::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
 .blog-post:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.blog-post:hover::before {
+    transform: scaleX(1);
 }
 
 .blog-post-content {
