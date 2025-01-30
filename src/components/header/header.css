@@ -92,8 +92,6 @@ site-header .menu-toggle {
     flex-direction: column;
     gap: 6px;
     cursor: pointer;
-    z-index: 1001;
-    padding: 10px;
 }
 
 site-header .menu-toggle span {
@@ -112,6 +110,8 @@ site-header .menu-toggle span {
 
     site-header .menu-toggle {
         display: flex;
+        position: relative;
+        z-index: 1001;
     }
 
     site-header .header-navbar ul {
@@ -125,7 +125,6 @@ site-header .menu-toggle span {
         align-items: center;
         padding: 80px 20px 40px;
         gap: 20px;
-        height: 100vh;
         transition: transform 0.3s ease;
     }
 
