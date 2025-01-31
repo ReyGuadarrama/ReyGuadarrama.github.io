@@ -4,20 +4,21 @@ technical-expertise {
 }
 
 .expertise-section {
-    padding: 80px 20px;
-    background-color: #f8f9fa;
+    padding: var(--spacing-xxl) var(--spacing-md);
+    background-color: var(--color-background-alt);
 }
 
 .expertise-container {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
+    padding: 0 var(--container-padding);
 }
 
 .expertise-title {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: var(--spacing-xxl);
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: var(--spacing-md);
 }
 
 .expertise-title::after {
@@ -28,34 +29,34 @@ technical-expertise {
     transform: translateX(-50%);
     width: 100px;
     height: 3px;
-    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    background: var(--gradient-primary);
 }
 
 .expertise-title h2 {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 16px;
+    font-size: var(--font-size-h2);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
 }
 
 .expertise-title p {
-    color: #666;
-    font-size: 18px;
+    color: var(--color-text-light);
+    font-size: var(--font-size-large);
 }
 
 .expertise-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: var(--spacing-xl);
 }
 
 .expertise-card {
-    background: white;
-    border-radius: 12px;
-    padding: 30px;
-    transition: all 0.3s ease;
+    background: var(--color-background);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xl);
+    transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
     opacity: 0;
     transform: translateY(20px);
 }
@@ -72,14 +73,14 @@ technical-expertise {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    background: var(--gradient-primary);
     transform: scaleX(0);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-base);
 }
 
 .expertise-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 .expertise-card:hover::before {
@@ -88,8 +89,8 @@ technical-expertise {
 
 .expertise-icon {
     font-size: 32px;
-    margin-bottom: 20px;
-    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    margin-bottom: var(--spacing-md);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -97,9 +98,9 @@ technical-expertise {
 }
 
 .expertise-card h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: var(--font-size-h4);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
 }
 
 .expertise-list {
@@ -110,9 +111,9 @@ technical-expertise {
 
 .expertise-list li {
     position: relative;
-    padding-left: 25px;
-    margin-bottom: 12px;
-    color: #555;
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-light);
     line-height: 1.6;
 }
 
@@ -120,13 +121,8 @@ technical-expertise {
     content: '▹';
     position: absolute;
     left: 0;
-    color: #08b2e6;
+    color: var(--color-primary);
 }
-
-/* Animation delays for cards */
-.expertise-card:nth-child(1) { transition-delay: 0.1s; }
-.expertise-card:nth-child(2) { transition-delay: 0.2s; }
-.expertise-card:nth-child(3) { transition-delay: 0.3s; }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -141,11 +137,11 @@ technical-expertise {
     }
 
     .expertise-title h2 {
-        font-size: 28px;
+        font-size: var(--font-size-h3);
     }
 
     .expertise-card {
-        padding: 25px;
+        padding: var(--spacing-md);
     }
 }
 
