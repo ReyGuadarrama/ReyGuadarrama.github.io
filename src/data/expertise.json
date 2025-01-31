@@ -1,0 +1,39 @@
+{
+    "sectionTitle": "Technical Expertise",
+    "sectionSubtitle": "Specialized skills in quantum computing and machine learning",
+    "categories": [
+        {
+            "icon": "atom",
+            "title": "Quantum Computing",
+            "skills": [
+                "Quantum Machine Learning",
+                "Quantum Algorithms",
+                "PennyLane, Qiskit, Cirq",
+                "Hybrid Quantum-Classical Systems",
+                "Quantum Complexity Theory"
+            ]
+        },
+        {
+            "icon": "brain",
+            "title": "Machine Learning",
+            "skills": [
+                "Neural Network Architecture",
+                "Generative Adversarial Networks",
+                "Optimization Techniques",
+                "Computer Vision",
+                "Deep Learning"
+            ]
+        },
+        {
+            "icon": "rocket",
+            "title": "Physics & Mathematics",
+            "skills": [
+                "Quantum Mechanics",
+                "Classical Mechanics",
+                "Probability Theory",
+                "Linear Algebra",
+                "Computational Physics"
+            ]
+        }
+    ]
+}

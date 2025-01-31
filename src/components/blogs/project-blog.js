@@ -2,49 +2,47 @@
 class ProjectsBlog extends HTMLElement {
     constructor() {
         super();
+        this.projectsData = null;
     }
 
-    connectedCallback() {
-        const projectsData = [
-            {
-                image: '/images/GSoC-2024/GSoC-logo.png',
-                title: 'QGANs for Monte Carlo Simulations',
-                description: 'Implementing quantum generative adversarial networks for Monte Carlo simulations during Google Summer of Code 2024.',
-                link: '/posts/GSoC-2024.html',
-                status: 'Read More'
-            },
-            {
-                image: '/images/QOSF-2024/qosf_logo.png',
-                title: 'Quantum Sudoku Solver with NISQ',
-                description: 'Solving 9x9 Sudoku puzzles using quantum computing in the QOSF Mentorship Program.',
-                link: '/posts/comming_soon.html',
-                status: 'Coming soon'
-            },
-            {
-                image: '/images/SGD_optimizers/gradient_descent.png',
-                title: 'Gradient Descent Optimizers',
-                description: 'A comprehensive review of commonly used gradient descent optimization algorithms.',
-                link: '/posts/comming_soon.html',
-                status: 'Coming soon'
-            }
-        ];
+    async connectedCallback() {
+        try {
+            await this.loadProjectsData();
+            this.render();
+            this.initIntersectionObserver();
+        } catch (error) {
+            console.error('Error loading projects data:', error);
+            this.renderError();
+        }
+    }
+
+    async loadProjectsData() {
+        const response = await fetch('/src/data/projects.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        this.projectsData = await response.json();
+    }
+
+    render() {
+        if (!this.projectsData) return;
 
         this.innerHTML = `
             <section class="projects-blog-section">
                 <div class="projects-blog-container">
                     <div class="projects-blog-title">
-                        <h2>Featured Projects & Blog</h2>
-                        <p>Exploring quantum computing and machine learning through practical applications</p>
+                        <h2>${this.projectsData.sectionTitle}</h2>
+                        <p>${this.projectsData.sectionSubtitle}</p>
                     </div>
                     
                     <div class="projects-grid">
-                        ${projectsData.map(project => this.createProjectCard(project)).join('')}
+                        ${this.projectsData.projects.map(project => 
+                            this.createProjectCard(project)
+                        ).join('')}
                     </div>
                 </div>
             </section>
         `;
-
-        this.initIntersectionObserver();
     }
 
     createProjectCard(project) {
@@ -64,10 +62,25 @@ class ProjectsBlog extends HTMLElement {
                     <p>${project.description}</p>
                     <span class="project-link">
                         ${project.status} 
-                        ${project.status === 'Read More' ? '<i class="fas fa-arrow-right"></i>' : ''}
+                        ${project.status === 'Read More' ? 
+                            '<i class="fas fa-arrow-right"></i>' : 
+                            ''}
                     </span>
                 </div>
             </a>
+        `;
+    }
+
+    renderError() {
+        this.innerHTML = `
+            <section class="projects-blog-section">
+                <div class="projects-blog-container">
+                    <div class="projects-blog-title">
+                        <h2>Featured Projects & Blog</h2>
+                        <p>Error loading content. Please try again later.</p>
+                    </div>
+                </div>
+            </section>
         `;
     }
 
