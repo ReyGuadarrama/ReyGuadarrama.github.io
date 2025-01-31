@@ -17,7 +17,7 @@ class ProjectsBlog extends HTMLElement {
     }
 
     async loadProjectsData() {
-        const response = await fetch('/src/data/projects.json');
+        const response = await fetch('/src/data/blogs.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
