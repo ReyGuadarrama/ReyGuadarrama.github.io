@@ -1,0 +1,35 @@
+{
+    "sectionTitle": "Featured Projects",
+    "sectionSubtitle": "Selected works in quantum computing and instrumentation",
+    "projects": [
+        {
+            "type": "Google Summer of Code 2024",
+            "title": "QGANs for Monte Carlo Simulations",
+            "description": "Implemented quantum generative adversarial networks for high-energy physics simulations. Developed a novel architecture using quantum circuits with auxiliary registers for generating ECAL and HCAL detector images simultaneously. Successfully replicated energy deposit patterns in both channels while preserving implicit data correlations.",
+            "technologies": [
+                "PennyLane",
+                "PyTorch",
+                "Quantum ML",
+                "Physics"
+            ],
+            "links": {
+                "repository": "https://github.com/ML4SCI/QMLHEP/tree/main/Quantum_GAN_for_HEP_Luis_Rey_Guadarrama",
+                "caseStudy": "../posts/GSoC-2024.html"
+            }
+        },
+        {
+            "type": "Published in Nuclear Instruments and Methods A",
+            "title": "Single Measurement Wave Union TDC",
+            "description": "Developed a novel time-to-digital converter achieving 5.65 ps resolution using a subsampling-scheme-based codification. Implemented on Cyclone V FPGA for high-precision time measurements in particle physics experiments. Achieved superior linearity compared to traditional methods.",
+            "technologies": [
+                "FPGA",
+                "VHDL",
+                "Hardware",
+                "Physics"
+            ],
+            "links": {
+                "publication": "https://doi.org/10.1016/j.nima.2025.170201"
+            }
+        }
+    ]
+}

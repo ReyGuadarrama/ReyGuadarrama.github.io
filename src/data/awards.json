@@ -1,0 +1,26 @@
+{
+    "sectionTitle": "Honors & Awards",
+    "sectionSubtitle": "Recognition and achievements",
+    "awards": [
+        {
+            "icon": "trophy",
+            "title": "ANUIES4MX Challenge Winner",
+            "description": "Selected for the \"Emergent Future Technology\" program at Mirai Innovation Lab, Osaka, Japan"
+        },
+        {
+            "icon": "award",
+            "title": "Google Summer of Code",
+            "description": "Selected contributor for ML4SCI organization's quantum computing projects"
+        },
+        {
+            "icon": "medal",
+            "title": "QOSF Mentorship",
+            "description": "Selected participant in Quantum Open Source Foundation mentorship program"
+        },
+        {
+            "icon": "graduation-cap",
+            "title": "Quantum Winter School",
+            "description": "Full scholarship for Microsoft Azure Quantum Winter School"
+        }
+    ]
+}

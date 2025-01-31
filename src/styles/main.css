@@ -16,3 +16,7 @@
 @import '../components/about/about.css';
 @import '../components/education/education.css';
 @import '../components/publications/publications.css';
+@import '../components/featured-projects/featured-projects.css';
+@import '../components/research-projects/research-projects.css';
+@import '../components/technical-skills/technical-skills.css';
+@import '../components/awards/awards.css';

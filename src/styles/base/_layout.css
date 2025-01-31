@@ -46,6 +46,11 @@ main {
 }
 
 @media (max-width: 768px) {
+    main {
+        flex: 1 0 auto;
+        margin-top: var(--header-height);
+    }
+    
     .grid-3,
     .grid-4 {
         grid-template-columns: repeat(2, 1fr);

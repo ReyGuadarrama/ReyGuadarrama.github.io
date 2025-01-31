@@ -1,0 +1,124 @@
+/* src/components/awards/awards.css */
+awards-section {
+    display: block;
+}
+
+.awards-section {
+    padding: var(--spacing-xxl) var(--container-padding);
+    background-color: var(--color-background-alt);
+}
+
+.section-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xxl);
+    position: relative;
+    padding-bottom: var(--spacing-md);
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gradient-primary);
+}
+
+.section-header h2 {
+    font-size: var(--font-size-h2);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+}
+
+.section-header p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-large);
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xl);
+}
+
+.award-card {
+    background: var(--color-background);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    opacity: 0;
+    transform: translateY(20px);
+    position: relative;
+}
+
+.award-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.award-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-base);
+}
+
+.award-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.award-card:hover::before {
+    transform: scaleX(1);
+}
+
+.award-card i {
+    font-size: 32px;
+    margin-bottom: var(--spacing-md);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.award-card h3 {
+    color: var(--color-text);
+    font-size: var(--font-size-h4);
+    margin-bottom: var(--spacing-sm);
+}
+
+.award-card p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-small);
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .awards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header h2 {
+        font-size: var(--font-size-h3);
+    }
+
+    .award-card {
+        padding: var(--spacing-md);
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "sectionTitle": "Technical Expertise & Tools",
+    "sectionSubtitle": "Comprehensive overview of technologies, skills and frameworks across projects",
+    "categories": [
+        {
+            "icon": "atom",
+            "title": "Quantum Computing",
+            "skills": [
+                "Quantum Machine Learning & QGANs",
+                "Quantum Circuit Design & Optimization",
+                "Quantum Algorithms",
+                "PennyLane & Qiskit",
+                "Cirq & pytket",
+                "Variational Quantum Algorithms",
+                "Quantum Encoding"
+            ]
+        },
+        {
+            "icon": "brain",
+            "title": "Machine Learning",
+            "skills": [
+                "Deep Learning & Neural Networks",
+                "Computer Vision",
+                "Generative Models (GANs, Diffusion)",
+                "PyTorch & TensorFlow",
+                "CNN Architecture Design",
+                "Reinforcement Learning",
+                "Optimization Algorithms",
+                "Recurrent Neural Networks"
+            ]
+        },
+        {
+            "icon": "square-root-alt",
+            "title": "Physics & Mathematics",
+            "skills": [
+                "Quantum Mechanics",
+                "Classical Mechanics",
+                "Statistical Mechanics",
+                "Linear Algebra",
+                "Probability Theory",
+                "Group Theory",
+                "Computational Physics",
+                "Mathematical Methods"
+            ]
+        },
+        {
+            "icon": "microscope",
+            "title": "Physics & Simulation",
+            "skills": [
+                "GEANT4 Physics Simulation",
+                "Data Analysis",
+                "Monte Carlo Methods",
+                "Particle Detection Systems",
+                "RPC Detector Design",
+                "Signal Processing",
+                "Data Acquisition Systems",
+                "High Energy Physics Tools"
+            ]
+        },
+        {
+            "icon": "robot",
+            "title": "Robotics & Hardware",
+            "skills": [
+                "FPGA Implementation",
+                "Robot Control Systems",
+                "Navigation Algorithms",
+                "Hardware Programming",
+                "Teleoperation Systems",
+                "Sensor Integration",
+                "Real-time Systems",
+                "Embedded Programming"
+            ]
+        },
+        {
+            "icon": "code",
+            "title": "Programming",
+            "skills": [
+                "Python Scientific Stack",
+                "MATLAB Advanced Usage",
+                "C++ Development",
+                "Version Control (Git)",
+                "Shell Scripting",
+                "Algorithm Development",
+                "Scientific Computing"
+            ]
+        }
+    ]
+}
