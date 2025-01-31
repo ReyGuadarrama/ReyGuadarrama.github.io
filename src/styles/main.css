@@ -1,0 +1,15 @@
+/* src/styles/main.css */
+/* Import base styles */
+@import './base/_reset.css';
+@import './base/_variables.css';
+@import './base/_typography.css';
+@import './base/_layout.css';
+@import './base/_utilities.css';
+
+/* Import components styles */
+@import '../components/header/header.css';
+@import '../components/footer/footer.css';
+@import '../components/hero/hero.css';
+@import '../components/expertise/expertise.css';
+@import '../components/blogs/project-blog.css';
+@import '../components/contact/contact.css';

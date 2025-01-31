@@ -1,0 +1,61 @@
+/* src/styles/base/_variables.css */
+:root {
+    /* Colors */
+    --color-primary: #08b2e6;
+    --color-secondary: #ff00ff;
+    --color-accent: #00ffff;
+    --color-background: #ffffff;
+    --color-background-alt: #f8f9fa;
+    --color-text: #333333;
+    --color-text-light: #666666;
+    --color-border: rgba(0, 0, 0, 0.1);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(90deg, #00ffff, #ff00ff);
+    --gradient-strip: linear-gradient(90deg, 
+        #ff00ff 0%,
+        #00ffff 25%,
+        #08b2e6 50%,
+        #7000ff 75%,
+        #ff00ff 100%
+    );
+
+    /* Typography */
+    --font-primary: Arial, sans-serif;
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-large: 18px;
+    --font-size-h1: 48px;
+    --font-size-h2: 36px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
+    
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+
+    /* Layout */
+    --container-max-width: 1200px;
+    --container-padding: 20px;
+    --header-height: 74px;
+    --border-radius: 12px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 15px rgba(0, 0, 0, 0.1);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Z-index layers */
+    --z-index-header: 1000;
+    --z-index-gradient-strip: 999;
+    --z-index-modal: 2000;
+}
