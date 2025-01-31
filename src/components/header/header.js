@@ -17,7 +17,7 @@ class Header extends HTMLElement {
                         </div>
                         <ul>
                             <li><a href="/index.html">HOME</a></li>
-                            <li><a href="/html/about.html">ABOUT</a></li>
+                            <li><a href="/src/content/about.html">ABOUT</a></li>
                             <li><a href="/html/portfolio.html">PORTFOLIO</a></li>
                             <li><a href="/html/blog.html">BLOG</a></li>
                         </ul>

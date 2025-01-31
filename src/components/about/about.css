@@ -1,0 +1,105 @@
+/* src/components/about/about-section.css */
+about-section {
+    display: block;
+}
+
+.about-section {
+    padding: calc(var(--header-height) + var(--spacing-xs)) var(--spacing-md) var(--spacing-xxl);
+    background-color: var(--color-background);
+}
+
+.about-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xxl);
+    position: relative;
+    padding-bottom: var(--spacing-md);
+}
+
+.about-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gradient-primary);
+}
+
+.about-header h1 {
+    font-size: var(--font-size-h1);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.about-text {
+    color: var(--color-text-light);
+    font-size: var(--font-size-base);
+}
+
+.about-text p {
+    margin-bottom: var(--spacing-md);
+}
+
+.about-highlights {
+    background: var(--color-background-alt);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.highlight-item {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-md);
+    position: relative;
+}
+
+.highlight-item:last-child {
+    margin-bottom: 0;
+}
+
+.highlight-item::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-header h1 {
+        font-size: var(--font-size-h2);
+    }
+
+    .about-section {
+        padding-top: calc(var(--header-height) + var(--spacing-xl));
+        padding-bottom: var(--spacing-xl);
+    }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .about-text,
+    .about-highlights {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

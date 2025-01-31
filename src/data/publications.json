@@ -1,0 +1,50 @@
+{
+    "title": "Publications & Research",
+    "categories": {
+        "Journal Articles": [
+            {
+                "title": "Single measurement wave union time-to-digital converter with a subsampling-scheme-based codification",
+                "authors": "M. Arredondo-Velázquez, R. Guadarrama, L. Rebolledo-Herrera, H. Zepeda-Fernández, and E. Moreno-Barbosa",
+                "journal": "Nuclear Instruments and Methods in Physics Research Section A, 2025",
+                "doi": "https://doi.org/10.1016/j.nima.2025.170201",
+                "link": "https://doi.org/10.1016/j.nima.2025.170201"
+            }
+        ],
+        "Conference Proceedings": [
+            {
+                "title": "Quantum Diffusion Model for Quark and Gluon Jet Generation",
+                "authors": "M. Baidachna, R. Guadarrama, G. R. Dahale, et al.",
+                "journal": "38th Conference on Neural Information Processing Systems, Dec. 2024",
+                "doi": "https://arxiv.org/abs/2412.21082",
+                "link": "https://arxiv.org/abs/2412.21082", 
+                "status": "preprint publication"
+            },
+            {
+                "title": "Quantum generative adversarial networks for high energy physics simulations",
+                "authors": "R. Guadarrama, S. Gleyzer, K. Matchev, et al.",
+                "journal": "Machine Learning with New Computational Paradigms Workshop at NeurIPS 2024, Vancouver, Canada",
+                "status": "Poster Presentation, Vancouver, Canada, Dec. 2024"
+            }
+        ],
+        "Research Communications": [
+            {
+                "title": "A quantum contrastive loss algorithm for image encoding into quantum states",
+                "authors": "L. R. V. Guadarrama, I. Pedraza, and L. D. Lievano",
+                "journal": "Instituto de Física, UNAM, Ciudad de México, México, Jun. 2024",
+                "status": "Oral Presentation, Jun. 2024"
+            },
+            {
+                "title": "Quantum generative adversarial networks for particle identification in proton collisions",
+                "authors": "L. D. Lievano, I. Pedraza, and L. R. V. Guadarrama",
+                "journal": "Instituto de Física, UNAM, Ciudad de México, México, Jun. 2024",
+                "status": "Poster Presentation, Jun. 2024"
+            },
+            {
+                "title": "Efecto de las variables ambientales en la operación de las cámaras de placas resistivas",
+                "authors": "G. W. Ovando, L. R. V. Guadarrama, and M. I. P. Morales",
+                "journal": "Zacatecas, México",
+                "status": "Poster Presentation, Oct. 2022"
+            }
+        ]
+    }
+}

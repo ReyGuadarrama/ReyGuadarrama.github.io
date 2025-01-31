@@ -1,7 +1,7 @@
 /* src/styles/base/_variables.css */
 :root {
     /* Colors */
-    --color-primary: #08b2e6;
+    --color-primary: #6f00ff8c;
     --color-secondary: #ff00ff;
     --color-accent: #00ffff;
     --color-background: #ffffff;
@@ -12,6 +12,7 @@
 
     /* Gradients */
     --gradient-primary: linear-gradient(90deg, #00ffff, #ff00ff);
+    --gradient-overlay: linear-gradient(90deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
     --gradient-strip: linear-gradient(90deg, 
         #ff00ff 0%,
         #00ffff 25%,

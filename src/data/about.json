@@ -1,0 +1,26 @@
+{
+    "title": "About Me",
+    "description": [
+        "I'm a Physics student at Benemérita Universidad Autónoma de Puebla, passionate about quantum computing and machine learning research. My work focuses on developing innovative solutions in quantum technologies, particularly in areas like quantum generative models, optimization algorithms, and high-energy physics simulations.",
+        "Currently maintaining a 3.7 GPA, I combine my academic studies with hands-on research experience. As a Research Assistant at Benemérita Universidad Autónoma de Puebla, I work on implementing neural networks for educational applications and developing optimization algorithms. I'm also actively involved in quantum computing projects through the Google Summer of Code program with ML4SCI and the QOSF mentorship program.",
+        "My current research includes developing quantum generative adversarial networks for Monte Carlo simulations in high-energy physics, implementing quantum encodings for NISQ devices, and working on AI algorithms for assistive technologies at Mirai Innovation Lab in Japan."
+    ],
+    "highlights": [
+        {
+            "title": "Google Summer of Code 2024",
+            "content": "Developed QGANs for Monte Carlo Simulations with ML4SCI organization"
+        },
+        {
+            "title": "Mirai Innovation Lab",
+            "content": "Selected for the Emerging Future Technologies program in Osaka, Japan"
+        },
+        {
+            "title": "Research Focus",
+            "content": "Quantum Machine Learning, High-Energy Physics, Neural Networks"
+        },
+        {
+            "title": "Technical Expertise",
+            "content": "Python, MATLAB, C++, PennyLane, Qiskit, PyTorch, TensorFlow"
+        }
+    ]
+}

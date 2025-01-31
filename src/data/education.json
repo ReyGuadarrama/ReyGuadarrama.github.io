@@ -1,0 +1,40 @@
+{
+    "title": "Education & Research",
+    "timeline": [
+        {
+            "title": "Bachelor's Degree in Physics - Benemérita Universidad Autónoma de Puebla",
+            "date": "2021 - Present",
+            "description": "Currently maintaining a 3.7 GPA. Focus on quantum computing, machine learning, and high-energy physics."
+        },
+        {
+            "title": "Research Assistant - CIIEC, Benemérita Universidad Autónoma de Puebla",
+            "date": "2023 - Present",
+            "description": "Designed and implemented Resistive Plate Chambers (RPCs) simulations using GEANT4. Conducted data analysis with ROOT under Dr. María Isabel Pedraza Morales."
+        },
+        {
+            "title": "Research Assistant - Benemérita Universidad Autónoma de Puebla",
+            "date": "2023 - Present",
+            "description": "Implementing dense and convolutional neural networks in MATLAB for educational applications and development of optimization algorithms."
+        },
+        {
+            "title": "Emerging Technologies Program - Mirai Innovation Lab",
+            "date": "Sep - Dec 2024",
+            "description": "Developed AI and navigation algorithms for an assistive robotic guide dog designed for visually impaired users in Osaka, Japan."
+        },
+        {
+            "title": "Google Summer of Code - ML4SCI",
+            "date": "May - Sep 2024",
+            "description": "Developed quantum generative adversarial networks for Monte Carlo simulations in high-energy physics, focusing on gluon-initiated jet generation using PennyLane and PyTorch."
+        },
+        {
+            "title": "Quantum Computing Mentorship Program",
+            "date": "May - Aug 2024",
+            "description": "Evaluated and implemented quantum encodings to optimize circuit performance for executing 9x9 Sudoku on NISQ computers using pytket under M.C. Fernando Betanzo."
+        },
+        {
+            "title": "Research Assistant - Medical Physics Laboratory",
+            "date": "2021 - 2023",
+            "description": "Characterized scintillating plastics and developed instrumentation for particle detection. Implemented data acquisition systems and analysis pipelines in Python."
+        }
+    ]
+}
