@@ -1,6 +1,7 @@
 /* src/components/header/header.css */
 site-header {
     display: block;
+    background-color: var(--color-header);
 }
 
 site-header header {
@@ -8,26 +9,21 @@ site-header header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
-    background-color: rgba(249, 250, 252, 0.95);
-    padding: 16px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: var(--z-index-header);
+    background-color: var(--color-header);
+    padding: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: background-color var(--transition-base);
 }
 
 site-header .gradient-strip {
     position: fixed;
-    top: 50px;
+    top: 55px;
     left: 0;
     right: 0;
     height: 8px;
-    background: linear-gradient(90deg, 
-        #ff00ff 0%,
-        #00ffff 25%,
-        #08b2e6 50%,
-        #7000ff 75%,
-        #ff00ff 100%
-    );
-    z-index: 999;
+    background: var(--gradient-strip);
+    z-index: var(--z-index-gradient-strip);
     animation: gradient 15s ease infinite;
     background-size: 200% auto;
 }
@@ -39,14 +35,17 @@ site-header .gradient-strip {
 }
 
 site-header .container {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: center;
+    padding: 0 var(--container-padding);
+    position: relative;
 }
 
 site-header .header-navbar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
@@ -56,19 +55,20 @@ site-header .header-navbar ul {
     margin: 0;
     display: flex;
     gap: 40px;
-    justify-content: center;
+    position: relative;
+    z-index: 2;
 }
 
 site-header .header-navbar ul li a {
     text-decoration: none;
-    color: #333;
-    font-size: 16px;
+    color: var(--color-text);
+    font-size: var(--font-size-base);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 8px 0;
+    padding: var(--spacing-sm) 0;
     position: relative;
-    transition: color 0.3s ease;
+    transition: color var(--transition-base);
 }
 
 site-header .header-navbar ul li a::after {
@@ -78,40 +78,88 @@ site-header .header-navbar ul li a::after {
     height: 2px;
     bottom: 0;
     left: 0;
-    background: linear-gradient(90deg, #00ffff, #ff00ff);
-    transition: width 0.3s ease;
+    background: var(--gradient-primary);
+    transition: width var(--transition-base);
 }
 
 site-header .header-navbar ul li a:hover::after {
     width: 100%;
 }
 
-/* Mobile Menu Toggle Button */
-site-header .menu-toggle {
+/* Theme Toggle Styles */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    color: var(--color-text);
+    transition: all var(--transition-base);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.theme-toggle:hover {
+    background: var(--gradient-overlay);
+}
+
+.theme-toggle .moon-icon,
+.theme-toggle .sun-icon {
+    position: absolute;
+    transition: all var(--transition-base);
+}
+
+.theme-toggle .moon-icon {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.theme-toggle .sun-icon {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.theme-toggle.dark .moon-icon {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.theme-toggle.dark .sun-icon {
+    opacity: 1;
+    transform: translateY(0);
+    color: var(--color-accent);
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
     display: none;
     flex-direction: column;
     gap: 6px;
     cursor: pointer;
+    position: absolute;
+    left: 0;
+    z-index: 2;
 }
 
-site-header .menu-toggle span {
-    display: block;
+.menu-toggle span {
     width: 25px;
     height: 2px;
-    background-color: #333;
-    transition: all 0.3s ease;
+    background-color: var(--color-text);
+    transition: var(--transition-base);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    site-header .container {
-        justify-content: flex-end;
-    }
-
-    site-header .menu-toggle {
+    .menu-toggle {
         display: flex;
-        position: relative;
-        z-index: 1001;
     }
 
     site-header .header-navbar ul {
@@ -120,50 +168,51 @@ site-header .menu-toggle span {
         top: 0;
         left: 0;
         right: 0;
-        background-color: rgba(249, 250, 252, 0.98);
+        background-color: var(--color-header);
         flex-direction: column;
         align-items: center;
         padding: 80px 20px 40px;
         gap: 20px;
-        transition: transform 0.3s ease;
     }
 
     site-header .header-navbar ul.show {
         display: flex;
     }
 
-    /* Animated hamburger to X */
-    site-header .menu-toggle.active span:nth-child(1) {
+    .menu-toggle.active span:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
 
-    site-header .menu-toggle.active span:nth-child(2) {
+    .menu-toggle.active span:nth-child(2) {
         opacity: 0;
     }
 
-    site-header .menu-toggle.active span:nth-child(3) {
+    .menu-toggle.active span:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    site-header .gradient-strip {
-        top: 54px;
+    .theme-toggle {
+        right: 20px;
     }
 }
 
-/* Tablet Adjustments */
-@media (min-width: 769px) and (max-width: 1024px) {
-    site-header .header-navbar ul {
-        gap: 20px;
+/* High contrast mode */
+@media (forced-colors: active) {
+    site-header .header-navbar ul li a::after {
+        background: CanvasText;
+    }
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    site-header .gradient-strip {
+        animation: none;
     }
     
-    site-header .header-navbar ul li a {
-        font-size: 14px;
-    }
-}
-
-/* Large Screen Adjustments */
-@media (min-width: 1025px) {
-    site-header .container {
-        padding: 0 40px;
+    .theme-toggle,
+    .theme-toggle .moon-icon,
+    .theme-toggle .sun-icon,
+    site-header .header-navbar ul li a::after {
+        transition: none;
     }
 }
