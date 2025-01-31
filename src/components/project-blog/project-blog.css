@@ -129,6 +129,7 @@ projects-blog {
 
 .project-content {
     padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
 }
 
 .project-content h3 {
@@ -161,8 +162,11 @@ projects-blog {
 }
 
 .project-link {
-    display: inline-block;
-    position: inherit;
+    position: absolute;
+    bottom: var(--spacing-md);
+    left: var(--spacing-md);
+    display: inline-flex;
+    align-items: center;
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: 20px;
     font-size: var(--font-size-small);

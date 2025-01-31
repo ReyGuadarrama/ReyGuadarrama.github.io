@@ -28,7 +28,7 @@ class Header extends HTMLElement {
                             <li><a href="/index.html">HOME</a></li>
                             <li><a href="/src/content/about.html">ABOUT</a></li>
                             <li><a href="/src/content/portfolio.html">PORTFOLIO</a></li>
-                            <li><a href="/html/blog.html">BLOG</a></li>
+                            <li><a href="/src/content/blog.html">BLOG</a></li>
                         </ul>
                         <button class="theme-toggle" aria-label="Toggle dark mode">
                             <i class="fas fa-moon moon-icon"></i>

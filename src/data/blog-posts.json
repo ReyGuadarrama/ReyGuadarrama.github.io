@@ -1,0 +1,48 @@
+{
+    "sectionTitle": "Blog & Articles",
+    "sectionSubtitle": "Insights and experiences in quantum computing and machine learning",
+    "posts": [
+        {
+            "title": "QGANs for Monte Carlo Simulations in High-Energy Physics",
+            "description": "Exploring the implementation of Quantum Generative Adversarial Networks for Monte Carlo simulations in particle physics. A deep dive into my Google Summer of Code 2024 project with ML4SCI, focusing on quantum approaches to particle simulation.",
+            "image": "/images/GSoC-2024/GSoC-logo.png",
+            "categories": ["Quantum Computing"],
+            "link": "/posts/GSoC-2024.html",
+            "status": "Read More",
+            "date": "July 13, 2024",
+            "readTime": "13 min read",
+            "author": {
+                "name": "Rey Guadarrama",
+                "avatar": "/images/logos_portraits/me.png"
+            }
+        },
+        {
+            "title": "Understanding Gradient Descent Optimizers",
+            "description": "A comprehensive review of commonly used gradient descent optimization algorithms in deep learning. Examining the mechanics and applications of various optimizers including SGD, Adam, and RMSprop, with practical insights for implementation.",
+            "image": "/images/SGD_optimizers/gradient_descent.png",
+            "categories": ["Machine Learning"],
+            "link": "/posts/comming_soon.html",
+            "status": "Coming soon",
+            "date": " ",
+            "readTime": " ",
+            "author": {
+                "name": "Rey Guadarrama",
+                "avatar": "/images/logos_portraits/me.png"
+            }
+        },
+        {
+            "title": "Quantum Sudoku Solver with NISQ Devices",
+            "description": "Exploring the implementation and optimization of a quantum algorithm for solving 9x9 Sudoku puzzles on current quantum hardware. A detailed look at circuit optimization techniques and the challenges of working with NISQ devices.",
+            "image": "/images/QOSF-2024/qosf_logo.png",
+            "categories": ["Quantum Computing"],
+            "link": "/posts/comming_soon.html",
+            "status": "Coming soon",
+            "date": " ",
+            "readTime": " ",
+            "author": {
+                "name": "Rey Guadarrama",
+                "avatar": "/images/logos_portraits/me.png"
+            }
+        }
+    ]
+}
