@@ -4,211 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Rey Guadarrama</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/src/styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        /* Ensure the body fills the viewport and the footer stays at bottom */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+    </style>
+
 </head>
 
 <body>    
+
+    <site-header></site-header>
+
     <main>
 
-        <!-- Header -->
+        <site-hero></site-hero>
 
-        <header>
-            <div class="container">
-                <nav class="header-navbar">
-                    <div class="menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="html/about.html">About</a></li>
-                        <li><a href="html/portfolio.html">Portfolio</a></li>
-                        <li><a href="html/blog.html">Blog</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="gradient-strip"></div>
-        </header>
+        <technical-expertise></technical-expertise>
 
-        <!-- Hero Section -->
+        <projects-blog></projects-blog>
 
-        <section class="hero-section">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1 class="hero-title">Rey Guadarrama</h1>
-                        <p class="hero-subtitle">
-                            Physics Student, Quantum Computing & Machine Learning Researcher
-                        </p>
-                        <p class="hero-description">
-                            Physics student at BUAP specializing in quantum computing and machine learning. Current research 
-                            focuses on quantum generative models and high-energy physics simulations. Google Summer of Code 2024 alumni, 
-                            QOSF mentee, and EMFUTECH by Mirai Innovation Lab participant.
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="#contact" class="hero-button-primary">
-                                Contact Me
-                            </a>
-                            <a href="html/portfolio.html" class="hero-button-secondary">
-                                View Portfolio
-                            </a>
-                        </div>
-                    </div>
-                    <div class="hero-image">
-                        <img 
-                            src="images/logos_portraits/me.jpg"
-                            alt="Profile"
-                            class="hero-profile-img"
-                        />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Technical Expertice -->
-
-        <section class="expertise-section">
-            <div class="expertise-container">
-                <div class="expertise-title">
-                    <h2>Technical Expertise</h2>
-                    <p>Specialized skills in quantum computing and machine learning</p>
-                </div>
-                
-                <div class="expertise-grid">
-                    <div class="expertise-card">
-                        <i class="fas fa-atom expertise-icon"></i>
-                        <h3>Quantum Computing</h3>
-                        <ul class="expertise-list">
-                            <li>Quantum Machine Learning</li>
-                            <li>Quantum Algorithms</li>
-                            <li>PennyLane, Qiskit, Cirq</li>
-                            <li>Hybrid Quantum-Classical Systems</li>
-                            <li>Quantum Complexity Theory</li>
-                        </ul>
-                    </div>
-        
-                    <div class="expertise-card">
-                        <i class="fas fa-brain expertise-icon"></i>
-                        <h3>Machine Learning</h3>
-                        <ul class="expertise-list">
-                            <li>Neural Network Architecture</li>
-                            <li>Generative Adversarial Networks</li>
-                            <li>Optimization Techniques</li>
-                            <li>Computer Vision</li>
-                            <li>Deep Learning</li>
-                        </ul>
-                    </div>
-        
-                    <div class="expertise-card">
-                        <i class="fas fa-rocket expertise-icon"></i>
-                        <h3>Physics & Mathematics</h3>
-                        <ul class="expertise-list">
-                            <li>Quantum Mechanics</li>
-                            <li>Classical Mechanics</li>
-                            <li>Probability Theory</li>
-                            <li>Linear Algebra</li>
-                            <li>Computational Physics</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="projects-blog-section">
-            <div class="projects-blog-container">
-                <div class="projects-blog-title">
-                    <h2>Featured Projects & Blog</h2>
-                    <p>Exploring quantum computing and machine learning through practical applications</p>
-                </div>
-                
-                <div class="projects-grid">
-                    <a href="posts/GSoC-2024.html" class="project-card">
-                        <img class="project-image" src="images/GSoC-2024/GSoC-logo.png" alt="GSoC 2024">
-                        <div class="project-content">
-                            <h3>QGANs for Monte Carlo Simulations</h3>
-                            <p>Implementing quantum generative adversarial networks for Monte Carlo simulations during Google Summer of Code 2024.</p>
-                            <span class="project-link">
-                                Read More <i class="fas fa-arrow-right"></i>
-                            </span>
-                        </div>
-                    </a>
-        
-                    <a href="posts/comming_soon.html" class="project-card">
-                        <img class="project-image" src="images/QOSF-2024/qosf_logo.png" alt="QOSF 2024">
-                        <div class="project-content">
-                            <h3>Quantum Sudoku Solver with NISQ</h3>
-                            <p>Solving 9x9 Sudoku puzzles using quantum computing in the QOSF Mentorship Program.</p>
-                            <span class="project-link">
-                                Comming soon 
-                            </span>
-                        </div>
-                    </a>
-        
-                    <a href="posts/comming_soon.html" class="project-card">
-                        <img class="project-image" src="images/SGD_optimizers/gradient_descent.png" alt="Optimizers">
-                        <div class="project-content">
-                            <h3>Gradient Descent Optimizers</h3>
-                            <p>A comprehensive review of commonly used gradient descent optimization algorithms.</p>
-                            <span class="project-link">
-                                Comming soon
-                            </span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-section" id="contact">
-            <div class="contact-container">
-                <div class="contact-title">
-                    <h2>Get In Touch</h2>
-                    <p>Open to opportunities in quantum computing and machine learning</p>
-                </div>
-                
-                <div class="contact-content">
-                    <p class="contact-text">
-                        I'm currently seeking opportunities in quantum computing research and machine learning engineering roles. 
-                        Whether you have a question, a potential collaboration, or just want to say hi, I'll try my best to get back to you!
-                    </p>
-                    
-                    <div class="contact-methods">
-                        <a href="mailto:luisrey7.lrv@gmail.com" class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <h3>Email</h3>
-                            <span>luisrey7.lrv@gmail.com</span>
-                        </a>
-                        
-                        <a href="https://www.linkedin.com/in/reyguadarrama/" class="contact-method">
-                            <i class="fab fa-linkedin-in"></i>
-                            <h3>LinkedIn</h3>
-                            <span target="_blank">Connect with me</span>
-                        </a>
-                        
-                        <a href="https://github.com/ReyGuadarrama" class="contact-method">
-                            <i class="fab fa-github"></i>
-                            <h3>GitHub</h3>
-                            <span target="_blank">View my projects</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <contact-section></contact-section> 
         
     </main>
 
-    <footer>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/reyguadarrama/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/ReyGuadarrama" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:luisrey7.lrv@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p class="copyright">&copy; All rights reserved.</p>
-    </footer>
+    <site-footer></site-footer>
 
-    <script src="js/main.js"></script>
+    <script src="./src/components/header/header.js"></script>
+    <script src="./src/components/footer/footer.js"></script>
+    <script src="/src/components/hero/hero.js"></script>
+    <script src="/src/components/expertise/expertise.js"></script>
+    <script src="/src/components/blogs/project-blog.js"></script>
+    <script src="/src/components/contact/contact.js"></script>
 </body>
 </html>
 
