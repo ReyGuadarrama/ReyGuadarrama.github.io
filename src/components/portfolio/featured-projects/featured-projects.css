@@ -59,6 +59,19 @@ featured-projects {
     transform: translateY(20px);
 }
 
+.featured-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-base);
+    z-index: 1;
+}
+
 .featured-card.animate {
     opacity: 1;
     transform: translateY(0);
@@ -67,6 +80,10 @@ featured-projects {
 .featured-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+}
+
+.featured-card:hover::before {
+    transform: scaleX(1);
 }
 
 .card-content {

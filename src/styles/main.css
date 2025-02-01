@@ -9,15 +9,15 @@
 /* Import components styles */
 @import '../components/header/header.css';
 @import '../components/footer/footer.css';
-@import '../components/hero/hero.css';
-@import '../components/expertise/expertise.css';
-@import '../components/project-blog/project-blog.css';
-@import '../components/contact/contact.css';
-@import '../components/about/about.css';
-@import '../components/education/education.css';
-@import '../components/publications/publications.css';
-@import '../components/featured-projects/featured-projects.css';
-@import '../components/research-projects/research-projects.css';
-@import '../components/technical-skills/technical-skills.css';
-@import '../components/awards/awards.css';
+@import '../components/home/hero/hero.css';
+@import '../components/home/expertise/expertise.css';
+@import '../components/home/project-blog/project-blog.css';
+@import '../components/home/contact/contact.css';
+@import '../components/about/bio-section/about.css';
+@import '../components/about/education/education.css';
+@import '../components/about/publications/publications.css';
+@import '../components/portfolio/featured-projects/featured-projects.css';
+@import '../components/portfolio/research-projects/research-projects.css';
+@import '../components/portfolio/technical-skills/technical-skills.css';
+@import '../components/portfolio/awards/awards.css';
 @import '../components/blog/blog.css';
