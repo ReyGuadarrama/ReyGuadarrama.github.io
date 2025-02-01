@@ -1,0 +1,56 @@
+/* src/components/blog/post-menu/post-menu.css */
+blog-post-menu {
+    display: block;
+}
+
+.menu-container {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    width: 16%;
+    background-color: var(--color-background);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.menu-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.menu-item:hover {
+    background: var(--gradient-overlay);
+    transform: translateX(5px);
+}
+
+.menu-item.active {
+    font-weight: 500;
+    background: var(--gradient-overlay);
+}
+
+.blue-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--gradient-primary);
+}
+
+.menu-item span {
+    margin-left: 4px;
+}
+
+@media (max-width: 1100px) {
+    .menu-container {
+        display: none;
+    }
+}
