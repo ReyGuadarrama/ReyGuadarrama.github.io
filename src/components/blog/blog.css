@@ -193,7 +193,7 @@ blog-section {
     color: var(--color-text-light);
 }
 
-.status {
+.blog-status {
     position: absolute;
     bottom: var(--spacing-sm);
     right: var(--spacing-sm);
@@ -208,7 +208,7 @@ blog-section {
     gap: var(--spacing-xs);
 }
 
-.status:hover {
+.blog-status:hover {
     background: var(--gradient-overlay);
     transform: translateY(-2px);
 }

@@ -89,7 +89,7 @@ class BlogSection extends HTMLElement {
                                         <span class="post-date">${post.date} · ${post.readTime}</span>
                                     </div>
                                 </div>
-                                <span class="status">${post.status} 
+                                <span class="blog-status">${post.status} 
                                     <i class="fas ${post.status === 'Read More' ? 'fa-arrow-right' : 'fa-hourglass'}"></i>
                                 </span>
                             </div>
