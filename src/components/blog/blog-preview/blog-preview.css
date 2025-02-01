@@ -1,28 +1,28 @@
 /* src/components/blog/blog.css */
-blog-section {
+blog-preview-section {
     display: block;
 }
 
-.blog-section {
+.blog-preview-section {
     padding: var(--spacing-xxl) var(--container-padding);
     background-color: var(--color-background);
     min-height: calc(100vh - var(--header-height));
 }
 
-.blog-container {
+.blog-preview-container {
     max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.blog-header {
+.blog-preview-header {
     text-align: center;
     margin-bottom: var(--spacing-xxl);
     position: relative;
     padding-bottom: var(--spacing-md);
 }
 
-.blog-header::after {
+.blog-preview-header::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -33,13 +33,13 @@ blog-section {
     background: var(--gradient-primary);
 }
 
-.blog-header h1 {
+.blog-preview-header h1 {
     font-size: var(--font-size-h1);
     color: var(--color-text);
     margin-bottom: var(--spacing-md);
 }
 
-.blog-header p {
+.blog-preview-header p {
     color: var(--color-text-light);
     font-size: var(--font-size-large);
 }
@@ -68,13 +68,13 @@ blog-section {
     transform: translateY(-2px);
 }
 
-.blog-grid {
+.blog-preview-grid {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
 }
 
-.blog-post {
+.blog-preview {
     margin-bottom: var(--spacing-xl);
     background: var(--color-background-alt);
     border-radius: var(--border-radius);
@@ -86,18 +86,18 @@ blog-section {
     transform: translateY(20px);
 }
 
-.blog-post.animate {
+.blog-preview.animate {
     opacity: 1;
     transform: translateY(0);
 }
 
-.blog-post-link {
+.blog-preview-link {
     text-decoration: none;
     color: inherit;
     display: block;
 }
 
-.blog-post::before {
+.blog-preview::before {
     content: '';
     position: absolute;
     top: 0;
@@ -110,22 +110,22 @@ blog-section {
     z-index: 1;
 }
 
-.blog-post:hover {
+.blog-preview:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
-.blog-post:hover::before {
+.blog-preview:hover::before {
     transform: scaleX(1);
 }
 
-.blog-post-content {
+.blog-preview-content {
     display: flex;
     height: 400px;
     background: var(--color-background-alt);
 }
 
-.blog-post-image {
+.blog-preview-image {
     width: 100%;
     height: 400px;
     background-size: cover;
@@ -134,7 +134,7 @@ blog-section {
     flex: 1;
 }
 
-.blog-post-text {
+.blog-preview-text {
     padding: var(--spacing-xl);
     display: flex;
     flex-direction: column;
@@ -143,7 +143,7 @@ blog-section {
     min-width: 300px;
 }
 
-.post-label {
+.post-preview-label {
     display: inline-block;
     background: var(--gradient-overlay);
     padding: var(--spacing-xs) var(--spacing-md);
@@ -153,19 +153,19 @@ blog-section {
     margin-bottom: var(--spacing-md);
 }
 
-.blog-post h2 {
+.blog-preview h2 {
     font-size: var(--font-size-h3);
     color: var(--color-text);
     margin-bottom: var(--spacing-md);
 }
 
-.blog-post p {
+.blog-preview p {
     color: var(--color-text-light);
     margin-bottom: var(--spacing-xl);
     line-height: 1.8;
 }
 
-.post-meta {
+.post-preview-meta {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
@@ -173,13 +173,13 @@ blog-section {
     font-size: var(--font-size-small);
 }
 
-.post-meta img {
+.post-preview-meta img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
 
-.post-meta-text {
+.post-preview-meta-text {
     display: flex;
     flex-direction: column;
 }
@@ -195,8 +195,8 @@ blog-section {
 
 .blog-status {
     position: absolute;
-    bottom: var(--spacing-sm);
-    right: var(--spacing-sm);
+    bottom: var(--spacing-xl);
+    right: var(--spacing-xl);
     padding: var(--spacing-xs) var(--spacing-md);
     border-radius: 20px;
     font-size: var(--font-size-small);
@@ -214,22 +214,25 @@ blog-section {
 }
 
 @media (max-width: 1024px) {
-    .blog-post-content {
+    .blog-preview
+-content {
         flex-direction: column;
         height: auto;
     }
 
-    .blog-post-image {
+    .blog-preview
+-image {
         min-height: 300px;
     }
 }
 
 @media (max-width: 768px) {
-    .blog-header h1 {
+    .blog-preview-header h1 {
         font-size: var(--font-size-h2);
     }
 
-    .blog-post-text {
+    .blog-preview
+-text {
         padding: var(--spacing-md);
     }
 

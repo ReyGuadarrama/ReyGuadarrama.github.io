@@ -19,7 +19,7 @@ class BlogSection extends HTMLElement {
     }
 
     async loadBlogData() {
-        const response = await fetch('/src/data/blog-posts.json');
+        const response = await fetch('/src/data/blog-preview.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -30,9 +30,9 @@ class BlogSection extends HTMLElement {
         if (!this.blogData) return;
 
         this.innerHTML = `
-            <section class="blog-section">
-                <div class="blog-container">
-                    <div class="blog-header">
+            <section class="blog-preview-section">
+                <div class="blog-preview-container">
+                    <div class="blog-preview-header">
                         <h1>${this.blogData.sectionTitle}</h1>
                         <p>${this.blogData.sectionSubtitle}</p>
                     </div>
@@ -44,7 +44,7 @@ class BlogSection extends HTMLElement {
                         ).join('')}
                     </div>
 
-                    <div class="blog-grid">
+                    <div class="blog-preview-grid">
                         ${this.renderBlogPosts()}
                     </div>
                 </div>
@@ -70,21 +70,21 @@ class BlogSection extends HTMLElement {
 
     createBlogPostCard(post) {
         return `
-            <article class="blog-post">
-                <a href="${post.link}" class="blog-post-link">
-                    <div class="blog-post-content">
-                        <div class="blog-post-image" style="background-image: url('${post.image}');">
+            <article class="blog-preview">
+                <a href="${post.link}" class="blog-preview-link">
+                    <div class="blog-preview-content">
+                        <div class="blog-preview-image" style="background-image: url('${post.image}');">
                         </div>
-                        <div class="blog-post-text">
+                        <div class="blog-preview-text">
                             <div>
-                                <span class="post-label">${post.categories[0]}</span>
+                                <span class="post-preview-label">${post.categories[0]}</span>
                                 <h2>${post.title}</h2>
                                 <p>${post.description}</p>
                             </div>
                             <div>
-                                <div class="post-meta">
+                                <div class="post-preview-meta">
                                     <img src="${post.author.avatar}" alt="${post.author.name}">
-                                    <div class="post-meta-text">
+                                    <div class="post-preview-meta-text">
                                         <span class="author-name">${post.author.name}</span>
                                         <span class="post-date">${post.date} · ${post.readTime}</span>
                                     </div>
@@ -102,9 +102,9 @@ class BlogSection extends HTMLElement {
 
     renderError() {
         this.innerHTML = `
-            <section class="blog-section">
-                <div class="blog-container">
-                    <div class="blog-header">
+            <section class="blog-preview-section">
+                <div class="blog-preview-container">
+                    <div class="blog-preview-header">
                         <h1>Blog & Articles</h1>
                         <p>Error loading content. Please try again later.</p>
                     </div>
@@ -131,7 +131,7 @@ class BlogSection extends HTMLElement {
 
         // Update active category and re-render posts
         this.activeCategory = clickedTag.dataset.category;
-        const blogGrid = this.querySelector('.blog-grid');
+        const blogGrid = this.querySelector('.blog-preview-grid');
         blogGrid.innerHTML = this.renderBlogPosts();
 
         // Reinitialize intersection observer for new posts
@@ -154,7 +154,7 @@ class BlogSection extends HTMLElement {
             }
         );
 
-        this.querySelectorAll('.blog-post').forEach((post, index) => {
+        this.querySelectorAll('.blog-preview').forEach((post, index) => {
             post.classList.remove('animate'); // Reset animation
             post.style.transitionDelay = `${index * 0.03}s`;
             observer.observe(post);
@@ -162,4 +162,4 @@ class BlogSection extends HTMLElement {
     }
 }
 
-customElements.define('blog-section', BlogSection);
+customElements.define('blog-preview-section', BlogSection);

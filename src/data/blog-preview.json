@@ -21,7 +21,7 @@
             "description": "A comprehensive review of commonly used gradient descent optimization algorithms in deep learning. Examining the mechanics and applications of various optimizers including SGD, Adam, and RMSprop, with practical insights for implementation.",
             "image": "/images/SGD_optimizers/gradient_descent.png",
             "categories": ["Machine Learning"],
-            "link": "/posts/comming_soon.html",
+            "link": "/src/posts/template.html",
             "status": "Coming soon",
             "date": " ",
             "readTime": " ",
