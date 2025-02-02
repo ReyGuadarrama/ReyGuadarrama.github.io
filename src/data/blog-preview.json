@@ -7,7 +7,7 @@
             "description": "Exploring the implementation of Quantum Generative Adversarial Networks for Monte Carlo simulations in particle physics. A deep dive into my Google Summer of Code 2024 project with ML4SCI, focusing on quantum approaches to particle simulation.",
             "image": "/images/GSoC-2024/GSoC-logo.png",
             "categories": ["Quantum Computing"],
-            "link": "/posts/GSoC-2024.html",
+            "link": "/src/posts/GSoC-2024.html",
             "status": "Read More",
             "date": "July 13, 2024",
             "readTime": "13 min read",

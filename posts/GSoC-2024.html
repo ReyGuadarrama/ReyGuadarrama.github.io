@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GSoC 2024 - Rey Guadarrama</title>
-    <link rel="stylesheet" href="../css/blogpost.css">
+    <link rel="stylesheet" href="/src/styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/mono-blue.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -13,51 +13,24 @@
 </head>
 <body>
 
-    <div class="menu-container">
-
-        <div class="blue-bar"></div>
-        <span><a href="#GSoC"  class="menu-item active">What is Google Summer of Code?</a></span>
-
-        <span><a href="#Monte-Carlo" class="menu-item">Monte Carlo Simulations</a></span>
-
-        <span><a href="#GANs" class="menu-item">Generative Adversarial Networks</a></span>
-
-        <span><a href="#QGANs" class="menu-item">Quantum Generative Adversarial Networks</a></span>
-
-        <span><a href="#Simulating-random-variables" class="menu-item">Simulating random variables with QGANs</a></span>
-
-        <span><a href="#gluon-jets" class="menu-item">Using a QGAN to generate gluon initiated jets</a></span>
-
-        <span><a href="#conclusions" class="menu-item">Future work and conclusion</a></span>
-
-        <span><a href="#ref-sec" class="menu-item">References</a></span>
-
-    </div>
+    <blog-post-menu menu-items='[
+    {"id": "GSoC", "title": "What is Google Summer of Code?"},
+    {"id": "Monte-Carlo", "title": "Monte Carlo Simulations"},
+    {"id": "GANs", "title": "Generative Adversarial Networks"},
+    {"id": "QGANs", "title": "Quantum Generative Adversarial Networks"},
+    {"id": "Simulating-random-variables", "title": "Simulating random variables with QGANs"},
+    {"id": "gluon-jets", "title": "Using a QGAN to generate gluon initiated jets"},
+    {"id": "conclusions", "title": "Future work and conclusion"},
+    {"id": "ref-sec", "title": "References"}
+]'></blog-post-menu>
 
     <!-- Header -->
 
-    <header>
-        <div class="container">
-            <nav class="header-navbar">
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../html/about.html">About</a></li>
-                    <li><a href="../html/portfolio.html">Portfolio</a></li>
-                    <li><a href="../html/blog.html">Blog</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="gradient-strip"></div>
-    </header>
+    <site-header></site-header>
 
 
-    <main>
-        <article class="blog-post">
+    <main class="blog-post">
+        <article class="post-content">
             <div class="post-header">
                 <h1 class="post-title">GSoC 2024 | QGANs for Monte Carlo Simulations</h1>
                 <div class="post-meta">
@@ -434,13 +407,6 @@ def quantum_circuit(weights):
 
                 
                 </section>
-
-
-
-
-
-
-
                     <h2>References</h2>
                     <div id="references">
                         <p id="ref1">[1] Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, 
@@ -472,15 +438,11 @@ def quantum_circuit(weights):
         </article>
     </main>
 
-    <footer>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/reyguadarrama/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/ReyGuadarrama" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:luisrey7.lrv@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p class="copyright">&copy; All rights reserved.</p>
-    </footer>
+    <site-footer></site-footer>
     
-    <script src="../js/blogpost.js"></script>
+    <script src="/src/components/header/header.js"></script>
+    <script src="/src/components/footer/footer.js"></script>
+    <script src="/src/components/blog/blog-post/blog-post.js"></script>
+    <script src="/src/components/blog/post-menu/post-menu.js"></script>
 </body>
 </html>
