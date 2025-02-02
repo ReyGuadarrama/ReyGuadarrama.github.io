@@ -6,7 +6,7 @@
             "image": "/images/GSoC-2024/GSoC-logo.png",
             "title": "QGANs for Monte Carlo Simulations",
             "description": "Implementing quantum generative adversarial networks for Monte Carlo simulations during Google Summer of Code 2024.",
-            "link": "/posts/GSoC-2024.html",
+            "link": "/src/posts/test.html",
             "status": "Read More"
         },
         {
