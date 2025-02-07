@@ -48,14 +48,12 @@ class ResearchProjects extends HTMLElement {
     createResearchCard(project) {
         return `
             <div class="research-card">
-                <div class="card-content">
-                    <h3>${project.title}</h3>
-                    <p>${project.description}</p>
-                    <div class="tech-stack">
-                        ${project.technologies.map(tech => 
-                            `<span>${tech}</span>`
-                        ).join('')}
-                    </div>
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <div class="tech-stack">
+                    ${project.technologies.map(tech => 
+                        `<span>${tech}</span>`
+                    ).join('')}
                 </div>
             </div>
         `;

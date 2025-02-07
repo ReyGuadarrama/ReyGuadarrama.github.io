@@ -44,7 +44,7 @@ research-projects {
 
 .research-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-xl);
 }
 
@@ -57,6 +57,11 @@ research-projects {
     position: relative;
     opacity: 0;
     transform: translateY(20px);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 350px;
+    overflow: hidden;
 }
 
 .research-card.animate {
@@ -89,18 +94,34 @@ research-projects {
     color: var(--color-text);
     font-size: var(--font-size-h4);
     margin-bottom: var(--spacing-md);
+    position: relative;
+    padding-left: var(--spacing-lg);
+}
+
+.research-card h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 24px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
 }
 
 .research-card p {
     color: var(--color-text-light);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
     line-height: 1.6;
+    flex-grow: 1;
 }
 
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacing-xs);
+    margin-top: auto;
 }
 
 .tech-stack span {
@@ -110,17 +131,13 @@ research-projects {
     font-size: var(--font-size-small);
     color: var(--color-text);
     transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
 }
 
 .tech-stack span:hover {
     background: var(--gradient-overlay);
     transform: translateY(-2px);
-}
-
-@media (max-width: 1024px) {
-    .research-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (max-width: 768px) {
@@ -134,5 +151,6 @@ research-projects {
 
     .research-card {
         padding: var(--spacing-md);
+        min-height: auto;
     }
 }
