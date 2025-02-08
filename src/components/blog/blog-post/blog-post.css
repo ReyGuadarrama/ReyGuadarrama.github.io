@@ -114,7 +114,7 @@ code {
 
 code .line {
     display: block;
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
 code .line:before {
@@ -126,6 +126,7 @@ code .line:before {
     text-align: right;
     width: 20px;
     padding-right: 10px;
+    padding-left: 10px;
     user-select: none;
 }
 
@@ -151,17 +152,22 @@ code .line:before {
 figure {
     margin: 30px 0;
     text-align: center;
+    padding: var(--spacing-md);
+    background: var(--color-background-figures);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
 }
 
-figure img {
+/* figure img {
     max-width: 100%;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-md);
-}
+} */
 
 figcaption {
     margin-top: 15px;
-    color: var(--color-text-light);
+    color: var(--color-text-caption);
     font-size: 0.9em;
     font-style: italic;
 }

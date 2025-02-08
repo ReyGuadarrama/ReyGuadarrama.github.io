@@ -6,8 +6,10 @@
     --color-accent: #00ffff;
     --color-background: #ffffff;
     --color-background-alt: #f8f9fa;
+    --color-background-figures: #ffffff;
     --color-text: #333333;
     --color-text-light: #666666;
+    --color-text-caption: #858585;
     --color-border: rgba(0, 0, 0, 0.1);
     --color-header: rgba(249, 250, 252, 0.95);
 
@@ -69,8 +71,10 @@
     --color-accent: #66ffff;
     --color-background: #121212;
     --color-background-alt: #1e1e1e;
+    --color-background-figures: #ffffff;
     --color-text: #e0e0e0;
     --color-text-light: #a0a0a0;
+    --color-text-caption: #575656;
     --color-border: rgba(255, 255, 255, 0.1);
     --color-header: rgba(18, 18, 18, 0.95);
 

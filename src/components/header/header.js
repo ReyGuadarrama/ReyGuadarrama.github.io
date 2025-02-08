@@ -47,6 +47,14 @@ class Header extends HTMLElement {
         // Set initial theme
         document.documentElement.setAttribute('data-theme', this.theme);
         this.updateToggleState();
+        
+        // Set initial syntax highlighting theme
+        const syntaxTheme = document.querySelector('link[title="syntax-theme"]');
+        if (syntaxTheme) {
+            syntaxTheme.href = this.theme === 'dark' 
+                ? 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css'
+                : 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/mono-blue.min.css';
+        }
 
         // Add click event listener
         toggle.addEventListener('click', () => this.toggleTheme());
@@ -67,6 +75,14 @@ class Header extends HTMLElement {
         document.documentElement.setAttribute('data-theme', this.theme);
         localStorage.setItem('theme', this.theme);
         this.updateToggleState();
+        
+        // Update syntax highlighting theme
+        const syntaxTheme = document.querySelector('link[title="syntax-theme"]');
+        if (syntaxTheme) {
+            syntaxTheme.href = this.theme === 'dark' 
+                ? 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css'
+                : 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/mono-blue.min.css';
+        }
     }
 
     updateToggleState() {
