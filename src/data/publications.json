@@ -20,10 +20,12 @@
                 "status": "preprint publication"
             },
             {
-                "title": "Quantum generative adversarial networks for high energy physics simulations",
+                "title": "Quantum generative adversarial networks for gluon initiated jets generation",
                 "authors": "R. Guadarrama, S. Gleyzer, K. Matchev, et al.",
-                "journal": "Machine Learning with New Computational Paradigms Workshop at NeurIPS 2024, Vancouver, Canada",
-                "status": "Poster Presentation, Vancouver, Canada, Dec. 2024"
+                "journal": "39th Annual AAAI Conference on Artificial Intelligence, Mar. 2025.",
+                "doi": "https://arxiv.org/abs/2503.05044",
+                "link": "https://arxiv.org/abs/2503.05044", 
+                "status": "preprint publication"
             }
         ],
         "Research Communications": [
