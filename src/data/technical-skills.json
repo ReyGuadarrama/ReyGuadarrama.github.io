@@ -23,7 +23,6 @@
                 "Computer Vision",
                 "Generative Models (GANs, Diffusion)",
                 "PyTorch & TensorFlow",
-                "CNN Architecture Design",
                 "Reinforcement Learning",
                 "Optimization Algorithms",
                 "Recurrent Neural Networks"
@@ -47,11 +46,10 @@
             "icon": "microscope",
             "title": "Physics & Simulation",
             "skills": [
-                "GEANT4 Physics Simulation",
+                "Particle Physics Simulation",
                 "Data Analysis",
                 "Monte Carlo Methods",
                 "Particle Detection Systems",
-                "RPC Detector Design",
                 "Signal Processing",
                 "Data Acquisition Systems",
                 "High Energy Physics Tools"
@@ -61,14 +59,12 @@
             "icon": "robot",
             "title": "Robotics & Hardware",
             "skills": [
-                "FPGA Implementation",
-                "Robot Control Systems",
+                "Field Programmable Gates Arrays",
                 "Navigation Algorithms",
                 "Hardware Programming",
                 "Teleoperation Systems",
                 "Sensor Integration",
-                "Real-time Systems",
-                "Embedded Programming"
+                "Real-time Systems"
             ]
         },
         {
